@@ -35,6 +35,16 @@
   />
   <meta name="twitter:card" content="summary_large_image" />
 
+  <!--
+    ===========================================================
+    Firma (solo visible al ver código fuente / inspección)
+    Jair Elizondo
+    322 243 9782
+    Tip: agrega #whoami al final de la URL para mostrarlo en consola.
+    Ej: https://menu.airconekta.com/#whoami
+    ===========================================================
+  -->
+
   <style>
     /* ========================= Airconekta UI 2026 ========================= */
     :root{
@@ -1010,6 +1020,58 @@
       t.classList.add("show");
       setTimeout(() => t.classList.remove("show"), 1800);
     };
+
+    // ==========================================================
+    // FIRMA / WHOAMI (solo para consola / depuración)
+    // - No se muestra en el dashboard
+    // - Se ve al inspeccionar código fuente (comentario en <head>)
+    // - También se imprime en consola:
+    //   - siempre al cargar (suave)
+    //   - y "modo explícito" si URL termina en #whoami
+    // ==========================================================
+    const DEV_SIGNATURE = {
+      name: "Jair Elizondo",
+      phone: "322 243 9782",
+      hint: "Solicita algun sitio o funcion web",
+      hash: "#whoami",
+    };
+
+    function printWhoAmI({ loud = false } = {}) {
+      const lines = [
+        "────────────────────────────────────────",
+        `👤 ${DEV_SIGNATURE.name}`,
+        `📞 ${DEV_SIGNATURE.phone}`,
+        `🧩 ${DEV_SIGNATURE.hint}`,
+        `🔎 Tip: agrega ${DEV_SIGNATURE.hash} a la URL`,
+        "────────────────────────────────────────",
+      ];
+
+      if (loud) {
+        console.group("%cwhoami", "font-weight:900;");
+        lines.forEach((l) => console.log(l));
+        console.groupEnd();
+      } else {
+        // “suave”: no molesta, pero queda visible en consola
+        console.log(
+          `%c${DEV_SIGNATURE.name}%c · ${DEV_SIGNATURE.phone} · ${DEV_SIGNATURE.hint}`,
+          "font-weight:900;",
+          "font-weight:600; opacity:.85;"
+        );
+      }
+    }
+
+    // Siempre deja una firma “suave”
+    printWhoAmI({ loud: false });
+
+    // Si ponen #whoami, imprime modo “explícito”
+    function checkHashForWhoami() {
+      const h = (location.hash || "").toLowerCase();
+      if (h === DEV_SIGNATURE.hash) {
+        printWhoAmI({ loud: true });
+      }
+    }
+    window.addEventListener("hashchange", checkHashForWhoami, { passive: true });
+    checkHashForWhoami();
 
     // =====================
     // Splash (3s)
