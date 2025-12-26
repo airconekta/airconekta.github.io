@@ -37,11 +37,10 @@
 
   <!--
     ===========================================================
-    Firma (solo visible al ver código fuente / inspección)
+    Firma / Autor (solo visible al depurar o ver código fuente)
     Jair Elizondo
-    322 243 9782
-    Tip: agrega #whoami al final de la URL para mostrarlo en consola.
-    Ej: https://menu.airconekta.com/#whoami
+    +52 322 243 9782
+    Hint: /#whoami
     ===========================================================
   -->
 
@@ -631,6 +630,61 @@
       clip:rect(0,0,0,0);
       border:0;
     }
+
+    /* ========================= WHOAMI (vista especial) ========================= */
+    .who-wrap{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:14px;
+      margin-top:12px;
+      align-items:stretch;
+    }
+    @media (max-width:860px){
+      .who-wrap{ grid-template-columns:1fr; }
+    }
+    .who-card{
+      border:1px solid var(--border);
+      border-radius: 22px;
+      padding:16px;
+      background: rgba(255,255,255,.50);
+      backdrop-filter: blur(14px) saturate(140%);
+      box-shadow: 0 12px 30px rgba(16,48,96,.08);
+    }
+    :root[data-theme="dark"] .who-card{ background: rgba(255,255,255,.04); }
+
+    .who-hero{
+      display:flex;
+      gap:14px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .who-avatar{
+      width:72px;
+      height:72px;
+      border-radius: 22px;
+      border:1px solid var(--border);
+      background:
+        radial-gradient(60px 60px at 30% 20%, rgba(36,107,255,.35), transparent 60%),
+        radial-gradient(60px 60px at 90% 30%, rgba(24,198,255,.28), transparent 55%),
+        radial-gradient(60px 60px at 40% 95%, rgba(124,58,237,.22), transparent 60%),
+        rgba(255,255,255,.45);
+      display:grid;
+      place-items:center;
+      font-weight:1000;
+      letter-spacing:.6px;
+      box-shadow: 0 18px 50px rgba(16,48,96,.12);
+    }
+    :root[data-theme="dark"] .who-avatar{ background: rgba(255,255,255,.04); }
+
+    .who-name{ font-size:1.25rem; margin:0; font-weight:1000; }
+    .who-role{ margin:2px 0 0; color:var(--muted); font-weight:800; }
+
+    .who-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:12px;
+    }
   </style>
 </head>
 
@@ -760,6 +814,83 @@
       <div class="footer">
         <span>© <span id="year"></span> Airconekta</span>
         <span style="opacity:.85">Hecho con ⚡ para clientes felices</span>
+      </div>
+    </section>
+
+    <!-- ===== WHOAMI (vista oculta por hash) ===== -->
+    <section class="card" data-view="whoami" id="viewWhoami" aria-label="Whoami">
+      <div class="top-actions">
+        <div>
+          <h1>Whoami</h1>
+          <p class="lead" style="margin-bottom:0">Vista especial (solo con <strong>#whoami</strong>).</p>
+        </div>
+        <button class="btn btn-ghost" type="button" id="whoBackBtn">← Volver</button>
+      </div>
+
+      <div class="who-wrap">
+        <div class="who-card">
+          <div class="who-hero">
+            <div class="who-avatar" aria-hidden="true">JE</div>
+            <div>
+              <p class="who-name" id="whoName">Jair Elizondo</p>
+              <p class="who-role" id="whoRole">Soporte / Instalaciones · Airconekta</p>
+            </div>
+            <span class="pill">🧩 Debug route · #whoami</span>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="kpoints">
+            <div class="k">
+              <strong>📞 Teléfono</strong>
+              <span class="status" id="whoPhonePretty">322 243 9782</span>
+            </div>
+            <div class="k">
+              <strong>🟢 WhatsApp</strong>
+              <span class="status">Toca “Abrir chat” para escribir directo</span>
+            </div>
+            <div class="k">
+              <strong>🧠 Tip</strong>
+              <span class="status">En consola también aparece tu firma</span>
+            </div>
+            <div class="k">
+              <strong>🔒 Nota</strong>
+              <span class="status">No aparece en el dashboard normal, solo aquí</span>
+            </div>
+          </div>
+
+          <div class="who-actions">
+            <a class="btn btn-primary" id="whoWhatsBtn" href="#" rel="noopener noreferrer">🟢 Abrir chat</a>
+            <a class="btn" id="whoCallBtn" href="#">📞 Llamar</a>
+            <button class="btn btn-ghost" type="button" id="whoCopyBtn">📋 Copiar datos</button>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="mini-note">
+            Si llegaste aquí por accidente: vuelve al menú o borra el hash (<strong>#whoami</strong>) de la barra.
+          </div>
+        </div>
+
+        <div class="who-card">
+          <h2 style="margin:0 0 8px">🔎 ¿Cómo sé que sí funciona?</h2>
+          <div class="mini-note">
+            <strong>1)</strong> Abre DevTools → Console y recarga: verás tu firma.<br><br>
+            <strong>2)</strong> Ctrl+U (Ver código fuente): verás el bloque de firma en comentarios.<br><br>
+            <strong>3)</strong> Escribe <strong>#whoami</strong> al final de la URL: te trae a esta vista.
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="mini-note">
+            Pro tip: escribe <strong>menu.airconekta.com/#whoami</strong> desde cualquier dispositivo 📱💻
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <span>© <span class="year"></span> Airconekta</span>
+        <span style="opacity:.85">Debug view · #whoami</span>
       </div>
     </section>
 
@@ -1006,6 +1137,16 @@
     // =====================
     const NUMERO_DESTINO = "5213222108817";
 
+    // Firma (debug / whoami)
+    const WHOAMI = {
+      name: "Jair Elizondo",
+      phonePretty: "322 243 9782",
+      phoneDigits: "3222439782",
+      role: "Soporte / Instalaciones · Airconekta",
+      hint: "#whoami",
+      webHint: "Escribe #whoami al final de la URL"
+    };
+
     // LOGOS (por si quieres reusarlos en JS)
     const LOGO_1024 = "https://raw.githubusercontent.com/airconekta/airconekta/refs/heads/main/airconekta_logo_1024.png";
     const LOGO_512 = "https://raw.githubusercontent.com/airconekta/airconekta/refs/heads/main/airconekta_logo_512.png";
@@ -1021,57 +1162,25 @@
       setTimeout(() => t.classList.remove("show"), 1800);
     };
 
-    // ==========================================================
-    // FIRMA / WHOAMI (solo para consola / depuración)
-    // - No se muestra en el dashboard
-    // - Se ve al inspeccionar código fuente (comentario en <head>)
-    // - También se imprime en consola:
-    //   - siempre al cargar (suave)
-    //   - y "modo explícito" si URL termina en #whoami
-    // ==========================================================
-    const DEV_SIGNATURE = {
-      name: "Jair Elizondo",
-      phone: "322 243 9782",
-      hint: "Solicita algun sitio o funcion web",
-      hash: "#whoami",
-    };
-
-    function printWhoAmI({ loud = false } = {}) {
-      const lines = [
-        "────────────────────────────────────────",
-        `👤 ${DEV_SIGNATURE.name}`,
-        `📞 ${DEV_SIGNATURE.phone}`,
-        `🧩 ${DEV_SIGNATURE.hint}`,
-        `🔎 Tip: agrega ${DEV_SIGNATURE.hash} a la URL`,
-        "────────────────────────────────────────",
-      ];
-
-      if (loud) {
-        console.group("%cwhoami", "font-weight:900;");
-        lines.forEach((l) => console.log(l));
-        console.groupEnd();
-      } else {
-        // “suave”: no molesta, pero queda visible en consola
+    // =====================
+    // Firma en consola (solo al depurar)
+    // =====================
+    (function consoleSignature(){
+      try{
+        const line = "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━";
+        console.log("%c" + line, "color:#18c6ff;font-weight:900");
         console.log(
-          `%c${DEV_SIGNATURE.name}%c · ${DEV_SIGNATURE.phone} · ${DEV_SIGNATURE.hint}`,
-          "font-weight:900;",
-          "font-weight:600; opacity:.85;"
+          "%cAIRCONEKTA · Firma de desarrollo",
+          "color:#246bff;font-size:14px;font-weight:900"
         );
-      }
-    }
-
-    // Siempre deja una firma “suave”
-    printWhoAmI({ loud: false });
-
-    // Si ponen #whoami, imprime modo “explícito”
-    function checkHashForWhoami() {
-      const h = (location.hash || "").toLowerCase();
-      if (h === DEV_SIGNATURE.hash) {
-        printWhoAmI({ loud: true });
-      }
-    }
-    window.addEventListener("hashchange", checkHashForWhoami, { passive: true });
-    checkHashForWhoami();
+        console.log(
+          "%c" + WHOAMI.name + "  ·  " + WHOAMI.phonePretty + "  ·  " + WHOAMI.hint,
+          "color:#7c3aed;font-size:12px;font-weight:900"
+        );
+        console.log("%c" + WHOAMI.webHint, "color:#5b6b86;font-size:12px;font-weight:800");
+        console.log("%c" + line, "color:#18c6ff;font-weight:900");
+      }catch{}
+    })();
 
     // =====================
     // Splash (3s)
@@ -1130,7 +1239,8 @@
       const view = document.querySelector(`[data-view="${name}"]`);
       if (view) view.classList.add("active");
 
-      sessionStorage.setItem(VIEW_KEY, name);
+      // guarda última vista "normal" (no guardamos whoami como default)
+      if (name !== "whoami") sessionStorage.setItem(VIEW_KEY, name);
 
       try {
         window.scrollTo({ top: 0, behavior: "smooth" });
@@ -1140,6 +1250,8 @@
     }
 
     $("#menuBtn").addEventListener("click", () => {
+      // al volver al menú, limpiamos hash si venimos de whoami
+      if (location.hash) history.replaceState(null, "", location.pathname + location.search);
       showView("home");
       toast("Opciones listas ✅");
     });
@@ -1147,6 +1259,8 @@
     $$("[data-go]").forEach((btn) => {
       btn.addEventListener("click", () => {
         const v = btn.getAttribute("data-go");
+        // limpiamos hash al entrar a formularios
+        if (location.hash) history.replaceState(null, "", location.pathname + location.search);
         showView(v);
 
         setTimeout(() => {
@@ -1158,7 +1272,64 @@
       });
     });
 
-    $$("[data-back]").forEach((b) => b.addEventListener("click", () => showView("home")));
+    $$("[data-back]").forEach((b) => b.addEventListener("click", () => {
+      if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+      showView("home");
+    }));
+
+    // =====================
+    // WHOAMI (hash route)
+    // =====================
+    function renderWhoami(){
+      $("#whoName").textContent = WHOAMI.name;
+      $("#whoRole").textContent = WHOAMI.role;
+      $("#whoPhonePretty").textContent = WHOAMI.phonePretty;
+
+      const waLink =
+        `https://api.whatsapp.com/send?phone=52${WHOAMI.phoneDigits}` +
+        `&text=${encodeURIComponent("Hola 👋 " + WHOAMI.name + ", necesito soporte / info de Airconekta.")}` +
+        `&type=phone_number&app_absent=0`;
+
+      $("#whoWhatsBtn").setAttribute("href", waLink);
+      $("#whoCallBtn").setAttribute("href", `tel:+52${WHOAMI.phoneDigits}`);
+
+      $("#whoCopyBtn").onclick = async () => {
+        const text =
+          `${WHOAMI.name}\n` +
+          `${WHOAMI.phonePretty}\n` +
+          `Airconekta\n` +
+          `Tip: ${location.origin + location.pathname}#whoami`;
+        try{
+          await navigator.clipboard.writeText(text);
+          toast("Datos copiados ✅");
+        }catch{
+          toast("No se pudo copiar (permiso del navegador)");
+        }
+      };
+
+      $("#whoBackBtn").onclick = () => {
+        history.replaceState(null, "", location.pathname + location.search);
+        const last = sessionStorage.getItem(VIEW_KEY) || "home";
+        showView(last);
+        toast("Regresando ✅");
+      };
+    }
+
+    function handleHashRoute(){
+      const h = (location.hash || "").toLowerCase().trim();
+
+      if (h === "#whoami"){
+        renderWhoami();
+        showView("whoami");
+        return;
+      }
+
+      // si no es whoami, vuelve a última vista guardada
+      const last = sessionStorage.getItem(VIEW_KEY) || "home";
+      showView(last);
+    }
+
+    window.addEventListener("hashchange", handleHashRoute, { passive: true });
 
     // =====================
     // COMPARTIR
@@ -1442,9 +1613,16 @@
       };
     });
 
+    // =====================
     // Vista inicial
-    const last = sessionStorage.getItem(VIEW_KEY);
-    showView(last || "home");
+    // - si viene con #whoami, entra directo
+    // - si no, abre última vista guardada
+    // =====================
+    (function initView(){
+      // si no hay last aún, set default
+      if (!sessionStorage.getItem(VIEW_KEY)) sessionStorage.setItem(VIEW_KEY, "home");
+      handleHashRoute();
+    })();
   </script>
 </body>
 </html>
