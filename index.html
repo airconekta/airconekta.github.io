@@ -666,7 +666,7 @@
       background:
         radial-gradient(60px 60px at 30% 20%, rgba(36,107,255,.35), transparent 60%),
         radial-gradient(60px 60px at 90% 30%, rgba(24,198,255,.28), transparent 55%),
-        radial-gradient(60px 60px at 40% 95%, rgba(124,58,237,.22), transparent 60%),
+        radial-gradient(60px 60px at 40% 95%, rgbargba(124,58,237,.22), transparent 60%),
         rgba(255,255,255,.45);
       display:grid;
       place-items:center;
@@ -684,6 +684,64 @@
       gap:10px;
       flex-wrap:wrap;
       margin-top:12px;
+    }
+
+    /* ======================================================
+       FIX CONTRASTE TEXTO · LIGHT / DARK
+       ====================================================== */
+    body,
+    .card,
+    .info,
+    .opt,
+    .plan,
+    .k,
+    label,
+    input,
+    select,
+    textarea,
+    p,
+    h1, h2, h3, h4, h5, h6,
+    span,
+    strong {
+      color: var(--ink) !important;
+    }
+
+    .lead,
+    .desc,
+    .status,
+    .muted,
+    .pdesc,
+    .mini-note,
+    .footer {
+      color: var(--muted) !important;
+    }
+
+    .pill {
+      color: var(--muted) !important;
+    }
+
+    .badge {
+      color: var(--ink) !important;
+    }
+
+    .btn,
+    .opt .title {
+      color: var(--ink) !important;
+    }
+
+    .btn-primary {
+      color: #fff !important;
+    }
+
+    :root[data-theme="dark"] input,
+    :root[data-theme="dark"] select,
+    :root[data-theme="dark"] textarea {
+      color: var(--ink) !important;
+    }
+
+    ::placeholder {
+      color: var(--muted) !important;
+      opacity: 0.9;
     }
   </style>
 </head>
@@ -816,83 +874,6 @@
       <div class="footer">
         <span>© <span id="year"></span> Airconekta</span>
         <span style="opacity:.85">Hecho con ⚡ para clientes felices</span>
-      </div>
-    </section>
-
-    <!-- ===== WHOAMI (vista oculta por hash) ===== -->
-    <section class="card" data-view="whoami" id="viewWhoami" aria-label="Whoami">
-      <div class="top-actions">
-        <div>
-          <h1>Whoami</h1>
-          <p class="lead" style="margin-bottom:0">Vista especial (solo con <strong>#whoami</strong>).</p>
-        </div>
-        <button class="btn btn-ghost" type="button" id="whoBackBtn">← Volver</button>
-      </div>
-
-      <div class="who-wrap">
-        <div class="who-card">
-          <div class="who-hero">
-            <div class="who-avatar" aria-hidden="true">JE</div>
-            <div>
-              <p class="who-name" id="whoName">Jair Elizondo</p>
-              <p class="who-role" id="whoRole">Soporte / Instalaciones · Airconekta</p>
-            </div>
-            <span class="pill">🧩 Debug route · #whoami</span>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="kpoints">
-            <div class="k">
-              <strong>📞 Teléfono</strong>
-              <span class="status" id="whoPhonePretty">322 243 9782</span>
-            </div>
-            <div class="k">
-              <strong>🟢 WhatsApp</strong>
-              <span class="status">Toca “Abrir chat” para escribir directo</span>
-            </div>
-            <div class="k">
-              <strong>🧠 Tip</strong>
-              <span class="status">En consola también aparece tu firma</span>
-            </div>
-            <div class="k">
-              <strong>🔒 Nota</strong>
-              <span class="status">No aparece en el dashboard normal, solo aquí</span>
-            </div>
-          </div>
-
-          <div class="who-actions">
-            <a class="btn btn-primary" id="whoWhatsBtn" href="#" rel="noopener noreferrer">🟢 Abrir chat</a>
-            <a class="btn" id="whoCallBtn" href="#">📞 Llamar</a>
-            <button class="btn btn-ghost" type="button" id="whoCopyBtn">📋 Copiar datos</button>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="mini-note">
-            Si llegaste aquí por accidente: vuelve al menú o borra el hash (<strong>#whoami</strong>) de la barra.
-          </div>
-        </div>
-
-        <div class="who-card">
-          <h2 style="margin:0 0 8px">🔎 ¿Cómo sé que sí funciona?</h2>
-          <div class="mini-note">
-            <strong>1)</strong> Abre DevTools → Console y recarga: verás tu firma.<br><br>
-            <strong>2)</strong> Ctrl+U (Ver código fuente): verás el bloque de firma en comentarios.<br><br>
-            <strong>3)</strong> Escribe <strong>#whoami</strong> al final de la URL: te trae a esta vista.
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="mini-note">
-            Pro tip: escribe <strong>menu.airconekta.com/#whoami</strong> desde cualquier dispositivo 📱💻
-          </div>
-        </div>
-      </div>
-
-      <div class="footer">
-        <span>© <span class="year"></span> Airconekta</span>
-        <span style="opacity:.85">Debug view · #whoami</span>
       </div>
     </section>
 
@@ -1307,57 +1288,6 @@
     }));
 
     // =====================
-    // WHOAMI (hash route)
-    // =====================
-    function renderWhoami(){
-      $("#whoName").textContent = WHOAMI.name;
-      $("#whoRole").textContent = WHOAMI.role;
-      $("#whoPhonePretty").textContent = WHOAMI.phonePretty;
-
-      const waLink =
-        `https://api.whatsapp.com/send?phone=52${WHOAMI.phoneDigits}` +
-        `&text=${encodeURIComponent("Hola 👋 " + WHOAMI.name + ", necesito soporte / info de Airconekta.")}` +
-        `&type=phone_number&app_absent=0`;
-
-      $("#whoWhatsBtn").setAttribute("href", waLink);
-      $("#whoCallBtn").setAttribute("href", `tel:+52${WHOAMI.phoneDigits}`);
-
-      $("#whoCopyBtn").onclick = async () => {
-        const text =
-          `${WHOAMI.name}\n` +
-          `${WHOAMI.phonePretty}\n` +
-          `Airconekta\n` +
-          `Tip: ${location.origin + location.pathname}#whoami`;
-        try{
-          await navigator.clipboard.writeText(text);
-          toast("Datos copiados ✅");
-        }catch{
-          toast("No se pudo copiar (permiso del navegador)");
-        }
-      };
-
-      $("#whoBackBtn").onclick = () => {
-        history.replaceState(null, "", location.pathname + location.search);
-        const last = sessionStorage.getItem(VIEW_KEY) || "home";
-        showView(last);
-        toast("Regresando ✅");
-      };
-    }
-
-    function handleHashRoute(){
-      const h = (location.hash || "").toLowerCase().trim();
-      if (h === "#whoami"){
-        renderWhoami();
-        showView("whoami");
-        return;
-      }
-      const last = sessionStorage.getItem(VIEW_KEY) || "home";
-      showView(last);
-    }
-
-    window.addEventListener("hashchange", handleHashRoute, { passive: true });
-
-    // =====================
     // COMPARTIR
     // =====================
     $("#shareBtn").addEventListener("click", async (e) => {
@@ -1457,15 +1387,12 @@
       i_coloniaHidden.value = v;
       i_coloniaStatus.textContent = v ? `Colonia: ${v}` : "Sin colonia seleccionada";
 
-      // mostrar / ocultar el cuadro
       if (!v){
         tipoServicioBox.style.display = "none";
-        // por seguridad: reset a wifi y planes wifi (pero oculto)
         applyTipoServicio("wifi");
         return;
       }
 
-      // si hay colonia, se muestra y decide tipo
       tipoServicioBox.style.display = "block";
       applyTipoServicio(isFibraColonia(v) ? "fibra" : "wifi");
     }
@@ -1734,7 +1661,7 @@
     // =====================
     (function initView(){
       if (!sessionStorage.getItem(VIEW_KEY)) sessionStorage.setItem(VIEW_KEY, "home");
-      handleHashRoute();
+      showView(sessionStorage.getItem(VIEW_KEY) || "home");
     })();
   </script>
 </body>
