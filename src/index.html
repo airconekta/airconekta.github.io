@@ -2,37 +2,19 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <title>Airconekta · Centro de Solicitudes</title>
 
   <meta name="theme-color" content="#0b1220" />
   <meta name="color-scheme" content="light dark" />
-  <meta
-    name="description"
-    content="Centro de solicitudes Airconekta: Instalación, Cambio de domicilio y Cancelación. Envío por WhatsApp con formato listo."
-  />
+  <meta name="description" content="Centro de solicitudes Airconekta: Instalación, Cambio de domicilio y Cancelación. Envío por WhatsApp con formato listo." />
 
-  <!-- ========================= LOGOS / ICONOS ========================= -->
-  <link
-    rel="icon"
-    type="image/png"
-    href="https://raw.githubusercontent.com/airconekta/airconekta/refs/heads/main/airconekta_logo_512.png"
-  />
-  <link
-    rel="apple-touch-icon"
-    href="https://raw.githubusercontent.com/airconekta/airconekta/refs/heads/main/airconekta_logo_512.png"
-  />
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/airconekta/airconekta/refs/heads/main/airconekta_logo_512.png" />
+  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/airconekta/airconekta/refs/heads/main/airconekta_logo_512.png" />
 
-  <!-- (Compartir en redes) -->
   <meta property="og:title" content="Airconekta · Centro de Solicitudes" />
-  <meta
-    property="og:description"
-    content="Instalación, Cambio de domicilio y Cancelación. Envío por WhatsApp con formato listo."
-  />
-  <meta
-    property="og:image"
-    content="https://raw.githubusercontent.com/airconekta/airconekta/refs/heads/main/airconekta_logo_1024.png"
-  />
+  <meta property="og:description" content="Instalación, Cambio de domicilio y Cancelación. Envío por WhatsApp con formato listo." />
+  <meta property="og:image" content="https://raw.githubusercontent.com/airconekta/airconekta/refs/heads/main/airconekta_logo_1024.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <!--
@@ -45,78 +27,70 @@
   -->
 
   <style>
-    /* ========================= Airconekta UI 2026 ========================= */
     :root{
-      --bg: #f6f8ff;
-      --card: rgba(255,255,255,.78);
+      --bg:#f6f8ff;
+      --card:rgba(255,255,255,.78);
       --card-solid:#ffffff;
-      --ink: #0f1a2e;
+      --ink:#0f1a2e;
       --muted:#5b6b86;
       --accent:#246bff;
       --accent-2:#18c6ff;
       --accent-3:#7c3aed;
-      --border: rgba(207,224,255,.85);
-      --border-2: rgba(255,255,255,.55);
+      --border:rgba(207,224,255,.85);
+      --border-2:rgba(255,255,255,.55);
       --ok:#16a34a;
       --warn:#b45309;
-      --radius: 18px;
-      --radius-2: 22px;
-      --shadow: 0 14px 40px rgba(16,48,96,.12);
-      --shadow-2: 0 18px 60px rgba(16,48,96,.16);
-      --ring: 0 0 0 4px rgba(36,107,255,.16);
-      --maxw: 1040px;
-
-      /* URLs de logos */
-      --logo-1024: url("https://raw.githubusercontent.com/airconekta/airconekta/refs/heads/main/airconekta_logo_1024.png");
-      --logo-512: url("https://raw.githubusercontent.com/airconekta/airconekta/refs/heads/main/airconekta_logo_512.png");
-      --logo-trans: url("https://raw.githubusercontent.com/airconekta/airconekta/refs/heads/main/airconekta_logo_transparent.png");
+      --radius:18px;
+      --radius-2:22px;
+      --shadow:0 14px 40px rgba(16,48,96,.12);
+      --shadow-2:0 18px 60px rgba(16,48,96,.16);
+      --ring:0 0 0 4px rgba(36,107,255,.16);
+      --maxw:1040px;
+      --logo-1024:url("https://raw.githubusercontent.com/airconekta/airconekta/refs/heads/main/airconekta_logo_1024.png");
+      --logo-512:url("https://raw.githubusercontent.com/airconekta/airconekta/refs/heads/main/airconekta_logo_512.png");
+      --logo-trans:url("https://raw.githubusercontent.com/airconekta/airconekta/refs/heads/main/airconekta_logo_transparent.png");
     }
-
-    /* Dark mode tokens */
     :root[data-theme="dark"]{
-      --bg: #070b14;
-      --card: rgba(12,18,34,.72);
+      --bg:#070b14;
+      --card:rgba(12,18,34,.72);
       --card-solid:#0b1220;
-      --ink: #e9eefc;
+      --ink:#e9eefc;
       --muted:#a9b6d6;
-      --border: rgba(60,86,140,.35);
-      --border-2: rgba(255,255,255,.08);
-      --shadow: 0 18px 60px rgba(0,0,0,.45);
-      --shadow-2: 0 28px 90px rgba(0,0,0,.55);
-      --ring: 0 0 0 4px rgba(24,198,255,.18);
+      --border:rgba(60,86,140,.35);
+      --border-2:rgba(255,255,255,.08);
+      --shadow:0 18px 60px rgba(0,0,0,.45);
+      --shadow-2:0 28px 90px rgba(0,0,0,.55);
+      --ring:0 0 0 4px rgba(24,198,255,.18);
     }
 
-    *{ box-sizing:border-box; }
-    html,body{ height:100%; }
-
+    *{box-sizing:border-box}
+    html,body{height:100%}
     body{
       margin:0;
       font:16px/1.4 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
       color:var(--ink);
       background:
-        radial-gradient(900px 500px at 10% -10%, rgba(36,107,255,.18), transparent 60%),
-        radial-gradient(900px 500px at 110% 10%, rgba(24,198,255,.14), transparent 55%),
-        radial-gradient(900px 500px at 50% 115%, rgba(124,58,237,.12), transparent 60%),
+        radial-gradient(900px 500px at 10% -10%,rgba(36,107,255,.18),transparent 60%),
+        radial-gradient(900px 500px at 110% 10%,rgba(24,198,255,.14),transparent 55%),
+        radial-gradient(900px 500px at 50% 115%,rgba(124,58,237,.12),transparent 60%),
         var(--bg);
       overflow-x:hidden;
     }
-
-    /* Subtle grid texture */
     body::before{
       content:"";
       position:fixed;
       inset:0;
       background-image:
-        linear-gradient(to right, rgba(255,255,255,.06) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255,255,255,.06) 1px, transparent 1px);
-      background-size: 38px 38px;
-      opacity: .25;
+        linear-gradient(to right,rgba(255,255,255,.06) 1px,transparent 1px),
+        linear-gradient(to bottom,rgba(255,255,255,.06) 1px,transparent 1px);
+      background-size:38px 38px;
+      opacity:.25;
       pointer-events:none;
-      mix-blend-mode: overlay;
+      mix-blend-mode:overlay;
     }
+    :root[data-theme="dark"] body::before{opacity:.1}
 
-    :root[data-theme="dark"] body::before{ opacity:.10; }
-    a{ color:inherit; }
+    a{color:inherit}
 
     .shell{
       max-width:var(--maxw);
@@ -125,174 +99,145 @@
       position:relative;
     }
 
-    /* ========================= Splash Screen ========================= */
+    /* Splash */
     .splash{
       position:fixed;
       inset:0;
       display:grid;
       place-items:center;
       background:
-        radial-gradient(900px 520px at 20% 15%, rgba(36,107,255,.28), transparent 60%),
-        radial-gradient(900px 520px at 85% 25%, rgba(24,198,255,.22), transparent 55%),
-        radial-gradient(900px 520px at 45% 100%, rgba(124,58,237,.18), transparent 60%),
-        linear-gradient(180deg, #070b14, #0b1220);
+        radial-gradient(900px 520px at 20% 15%,rgba(36,107,255,.28),transparent 60%),
+        radial-gradient(900px 520px at 85% 25%,rgba(24,198,255,.22),transparent 55%),
+        radial-gradient(900px 520px at 45% 100%,rgba(124,58,237,.18),transparent 60%),
+        linear-gradient(180deg,#070b14,#0b1220);
       z-index:9999;
-      transition: opacity .35s ease, transform .35s ease, visibility .35s ease;
+      transition:opacity .35s ease,transform .35s ease,visibility .35s ease;
     }
     .splash.hide{
       opacity:0;
-      transform: translateY(-6px);
+      transform:translateY(-6px);
       visibility:hidden;
       pointer-events:none;
     }
     .splash-card{
-      width:min(92vw, 560px);
-      border-radius: 28px;
-      padding: 28px 22px;
+      width:min(92vw,560px);
+      border-radius:28px;
+      padding:28px 22px;
       text-align:center;
       color:#eaf2ff;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(10,16,30,.55);
-      box-shadow: 0 30px 90px rgba(0,0,0,.6);
-      backdrop-filter: blur(14px) saturate(120%);
+      border:1px solid rgba(255,255,255,.1);
+      background:rgba(10,16,30,.55);
+      box-shadow:0 30px 90px rgba(0,0,0,.6);
+      backdrop-filter:blur(14px) saturate(120%);
     }
     .splash-logo{
-      width: 88px;
-      height: 88px;
-      margin: 0 auto 10px;
-      border-radius: 26px;
-      display:grid;
-      place-items:center;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.12);
-      position:relative;
-      overflow:hidden;
+      width:88px;height:88px;margin:0 auto 10px;
+      border-radius:26px;
+      display:grid;place-items:center;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+      position:relative;overflow:hidden;
     }
     .splash-logo::before{
       content:"";
-      position:absolute;
-      inset:-40%;
-      background: conic-gradient(
-        from 0deg,
-        rgba(36,107,255,.0),
+      position:absolute;inset:-40%;
+      background:conic-gradient(from 0deg,
+        rgba(36,107,255,0),
         rgba(36,107,255,.6),
         rgba(24,198,255,.55),
         rgba(124,58,237,.55),
-        rgba(36,107,255,.0)
+        rgba(36,107,255,0)
       );
-      animation: spin 2.4s linear infinite;
+      animation:spin 2.4s linear infinite;
       opacity:.9;
     }
     .splash-logo .logo-img{
       position:relative;
-      width: 62px;
-      height: 62px;
-      border-radius: 22px;
+      width:62px;height:62px;border-radius:22px;
       display:block;
-      background: rgba(11,18,32,.92);
+      background:rgba(11,18,32,.92);
       border:1px solid rgba(255,255,255,.12);
-      object-fit: contain;
-      padding: 10px;
+      object-fit:contain;
+      padding:10px;
     }
     .splash-title{
-      font-weight: 1000;
-      letter-spacing: .6px;
-      font-size: clamp(2.0rem, 4.2vw, 3.0rem);
-      margin: 8px 0 6px;
+      font-weight:1000;
+      letter-spacing:.6px;
+      font-size:clamp(2rem, 4.2vw, 3rem);
+      margin:8px 0 6px;
     }
-    .splash-sub{
-      margin: 0;
-      color: rgba(233,238,252,.78);
-      font-weight: 700;
-    }
+    .splash-sub{margin:0;color:rgba(233,238,252,.78);font-weight:700}
     .splash-bar{
-      height: 10px;
-      margin: 16px auto 0;
-      border-radius: 999px;
-      width: min(380px, 82%);
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.10);
+      height:10px;margin:16px auto 0;border-radius:999px;
+      width:min(380px,82%);
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.1);
       overflow:hidden;
     }
-    .splash-bar > i{
-      display:block;
-      height:100%;
-      width: 40%;
-      background: linear-gradient(90deg, rgba(36,107,255,.15), rgba(36,107,255,.85), rgba(24,198,255,.85));
-      border-radius: 999px;
-      animation: load 1.1s ease-in-out infinite;
-      filter: drop-shadow(0 6px 14px rgba(36,107,255,.20));
+    .splash-bar>i{
+      display:block;height:100%;width:40%;
+      background:linear-gradient(90deg,rgba(36,107,255,.15),rgba(36,107,255,.85),rgba(24,198,255,.85));
+      border-radius:999px;
+      animation:load 1.1s ease-in-out infinite;
+      filter:drop-shadow(0 6px 14px rgba(36,107,255,.2));
     }
-
     @keyframes load{
-      0%{ transform: translateX(-30%); opacity:.65; }
-      50%{ transform: translateX(120%); opacity:1; }
-      100%{ transform: translateX(260%); opacity:.65; }
+      0%{transform:translateX(-30%);opacity:.65}
+      50%{transform:translateX(120%);opacity:1}
+      100%{transform:translateX(260%);opacity:.65}
     }
-    @keyframes spin{ to{ transform: rotate(360deg);} }
-
-    @media (prefers-reduced-motion: reduce){
-      .splash-logo::before, .splash-bar > i{ animation:none !important; }
-      .splash{ transition:none; }
+    @keyframes spin{to{transform:rotate(360deg)}}
+    @media (prefers-reduced-motion:reduce){
+      .splash-bar>i,.splash-logo::before{animation:none!important}
+      .splash{transition:none}
+    }
+    .sr-only{
+      position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+      overflow:hidden;clip:rect(0,0,0,0);border:0;
     }
 
-    /* ========================= Top nav ========================= */
+    /* Navbar */
     .nav{
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:12px;
       padding:14px 16px;
-      border-radius: 22px;
+      border-radius:22px;
       border:1px solid var(--border);
-      background: var(--card);
-      box-shadow: var(--shadow);
+      background:var(--card);
+      box-shadow:var(--shadow);
       position:sticky;
       top:12px;
-      backdrop-filter: blur(14px) saturate(140%);
+      backdrop-filter:blur(14px) saturate(140%);
       z-index:10;
     }
-    .brand{
-      display:flex;
-      gap:12px;
-      align-items:center;
-      font-weight: 1000;
-      letter-spacing: .2px;
-    }
+    .brand{display:flex;gap:12px;align-items:center;font-weight:1000;letter-spacing:.2px}
     .logo{
-      width: 40px;
-      height: 40px;
-      border-radius: 14px;
-      display:grid;
-      place-items:center;
-      background: linear-gradient(135deg, rgba(36,107,255,.18), rgba(24,198,255,.14));
+      width:40px;height:40px;border-radius:14px;
+      display:grid;place-items:center;
+      background:linear-gradient(135deg,rgba(36,107,255,.18),rgba(24,198,255,.14));
       border:1px solid var(--border-2);
-      box-shadow: 0 10px 26px rgba(16,48,96,.10);
-      position:relative;
-      overflow:hidden;
+      box-shadow:0 10px 26px rgba(16,48,96,.1);
+      position:relative;overflow:hidden;
     }
     .logo::before{
       content:"";
-      position:absolute;
-      inset:-40%;
-      background: conic-gradient(
-        from 0deg,
-        rgba(36,107,255,.0),
+      position:absolute;inset:-40%;
+      background:conic-gradient(from 0deg,
+        rgba(36,107,255,0),
         rgba(36,107,255,.55),
         rgba(24,198,255,.55),
         rgba(124,58,237,.55),
-        rgba(36,107,255,.0)
+        rgba(36,107,255,0)
       );
       opacity:.55;
-      animation: spin 6.5s linear infinite;
+      animation:spin 6.5s linear infinite;
     }
     .logo .logo-img{
-      position:relative;
-      width: 26px;
-      height: 26px;
-      display:block;
-      object-fit: contain;
-      filter: drop-shadow(0 6px 10px rgba(0,0,0,.18));
+      position:relative;width:26px;height:26px;display:block;
+      object-fit:contain;
+      filter:drop-shadow(0 6px 10px rgba(0,0,0,.18));
     }
     .brand small{
       display:block;
@@ -301,183 +246,137 @@
       letter-spacing:0;
       margin-top:2px;
     }
-    .inline{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
+    .inline{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}
 
-    /* ========================= Cards / typography ========================= */
+    /* Cards & UI */
     .card{
       margin-top:18px;
       padding:22px;
-      border-radius: 26px;
+      border-radius:26px;
       border:1px solid var(--border);
-      background: var(--card);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(14px) saturate(140%);
+      background:var(--card);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(14px) saturate(140%);
     }
-    h1{ font-size:1.6rem; margin:0 0 6px; letter-spacing:.2px; }
-    h2{ font-size:1.15rem; margin:0 0 10px; }
-    .lead{ color:var(--muted); margin:0 0 14px; }
+    h1{font-size:1.6rem;margin:0 0 6px;letter-spacing:.2px}
+    h2{font-size:1.15rem;margin:0 0 10px}
+    .lead{color:var(--muted);margin:0 0 14px}
 
-    /* ========================= Buttons ========================= */
     .btn{
       appearance:none;
       cursor:pointer;
       user-select:none;
       border:1px solid rgba(36,107,255,.65);
       color:var(--ink);
-      background: rgba(255,255,255,.55);
+      background:rgba(255,255,255,.55);
       padding:12px 14px;
-      border-radius: 14px;
-      font-weight: 900;
+      border-radius:14px;
+      font-weight:900;
       letter-spacing:.2px;
-      transition: transform .08s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease;
+      transition:transform .08s ease,box-shadow .15s ease,background .15s ease,border-color .15s ease;
       text-decoration:none;
       display:inline-flex;
       align-items:center;
       gap:8px;
       line-height:1;
-      backdrop-filter: blur(12px) saturate(120%);
+      backdrop-filter:blur(12px) saturate(120%);
     }
-    :root[data-theme="dark"] .btn{ background: rgba(255,255,255,.06); }
-    .btn:hover{ box-shadow: var(--ring); border-color: rgba(36,107,255,.95); }
-    .btn:active{ transform: translateY(1px); }
-    .btn:focus-visible{ outline:none; box-shadow: var(--ring); }
-
+    :root[data-theme="dark"] .btn{background:rgba(255,255,255,.06)}
+    .btn:hover{box-shadow:var(--ring);border-color:rgba(36,107,255,.95)}
+    .btn:active{transform:translateY(1px)}
+    .btn:focus-visible{outline:0;box-shadow:var(--ring)}
     .btn-primary{
       color:#fff;
-      border-color: transparent;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      box-shadow: 0 12px 26px rgba(36,107,255,.22);
+      border-color:transparent;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      box-shadow:0 12px 26px rgba(36,107,255,.22);
     }
-    .btn-primary:hover{
-      box-shadow: 0 0 0 4px rgba(24,198,255,.18), 0 18px 46px rgba(36,107,255,.20);
-    }
-    .btn-ghost{
-      border-color: var(--border);
-      color: var(--ink);
-      background: transparent;
-    }
-    .btn-ghost:hover{ box-shadow: 0 0 0 4px rgba(207,224,255,.35); }
+    .btn-primary:hover{box-shadow:0 0 0 4px rgba(24,198,255,.18),0 18px 46px rgba(36,107,255,.2)}
+    .btn-ghost{border-color:var(--border);color:var(--ink);background:transparent}
+    .btn-ghost:hover{box-shadow:0 0 0 4px rgba(207,224,255,.35)}
+    .btn-icon{width:44px;height:44px;padding:0;border-radius:14px;justify-content:center}
 
-    .btn-icon{
-      width: 44px;
-      height: 44px;
-      padding: 0;
-      border-radius: 14px;
-      justify-content:center;
-    }
-
-    .status{ font-size:.92rem; color:var(--muted); }
-
+    .status{font-size:.92rem;color:var(--muted)}
     .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      font-size:.9rem;
-      padding:8px 10px;
-      border-radius:999px;
+      display:inline-flex;align-items:center;gap:8px;
+      font-size:.9rem;padding:8px 10px;border-radius:999px;
       border:1px solid var(--border);
-      background: rgba(255,255,255,.45);
+      background:rgba(255,255,255,.45);
       color:var(--muted);
-      backdrop-filter: blur(12px) saturate(120%);
+      backdrop-filter:blur(12px) saturate(120%);
     }
-    :root[data-theme="dark"] .pill{ background: rgba(255,255,255,.05); }
-
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(12,1fr);
-      gap:14px;
-    }
-    .col-12{ grid-column:span 12; }
-    .col-6{ grid-column:span 6; }
-    .col-4{ grid-column:span 4; }
-
+    :root[data-theme="dark"] .pill{background:rgba(255,255,255,.05)}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+    .col-12{grid-column:span 12}
+    .col-6{grid-column:span 6}
+    .col-4{grid-column:span 4}
     @media (max-width:860px){
-      .col-6,.col-4{ grid-column:span 12; }
-      .shell{ padding:16px; }
-      .nav{ top:10px; }
+      .col-4,.col-6{grid-column:span 12}
+      .shell{padding:16px}
+      .nav{top:10px}
     }
 
-    label{ display:block; font-size:.92rem; color:var(--muted); margin:4px 0 6px; }
-
+    label{display:block;font-size:.92rem;color:var(--muted);margin:4px 0 6px}
     input,select,textarea{
       width:100%;
       padding:12px 14px;
-      border-radius: 14px;
+      border-radius:14px;
       border:1px solid var(--border);
-      background: rgba(255,255,255,.55);
-      color: var(--ink);
-      outline:none;
-      transition: border .15s ease, box-shadow .15s ease, transform .06s ease, background .15s ease;
+      background:rgba(255,255,255,.55);
+      color:var(--ink);
+      outline:0;
+      transition:border .15s ease,box-shadow .15s ease,transform .06s ease,background .15s ease;
       font:inherit;
       resize:vertical;
-      backdrop-filter: blur(12px) saturate(120%);
+      backdrop-filter:blur(12px) saturate(120%);
     }
-
     :root[data-theme="dark"] input,
     :root[data-theme="dark"] select,
     :root[data-theme="dark"] textarea{
-      background: rgba(255,255,255,.05);
+      background:rgba(255,255,255,.05);
+      color:var(--ink);
+    }
+    input:focus,select:focus,textarea:focus{border-color:rgba(24,198,255,.75);box-shadow:var(--ring)}
+    input:active,select:active,textarea:active{transform:translateY(.5px)}
+    ::placeholder{color:var(--muted);opacity:.9}
+
+    select:disabled{
+      opacity:.7;
+      cursor:not-allowed;
     }
 
-    input:focus,select:focus,textarea:focus{
-      border-color: rgba(24,198,255,.75);
-      box-shadow: var(--ring);
-    }
+    .divider{height:1px;background:rgba(207,224,255,.55);margin:14px 0}
+    :root[data-theme="dark"] .divider{background:rgba(60,86,140,.35)}
 
-    input:active,select:active,textarea:active{ transform: translateY(.5px); }
-
-    .divider{ height:1px; background: rgba(207,224,255,.55); margin:14px 0; }
-    :root[data-theme="dark"] .divider{ background: rgba(60,86,140,.35); }
-
-    /* option cards */
-    .option-cards{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:12px;
-      margin-top:14px;
-    }
-    @media (max-width:860px){
-      .option-cards{ grid-template-columns:1fr; }
-    }
-
+    .option-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+    @media (max-width:860px){.option-cards{grid-template-columns:1fr}}
     .opt{
       border:1px solid var(--border);
-      border-radius: 20px;
+      border-radius:20px;
       padding:16px;
-      background: rgba(255,255,255,.55);
-      box-shadow: 0 12px 30px rgba(16,48,96,.08);
+      background:rgba(255,255,255,.55);
+      box-shadow:0 12px 30px rgba(16,48,96,.08);
       cursor:pointer;
       text-align:left;
-      transition: transform .10s ease, box-shadow .15s ease, border-color .15s ease;
-      backdrop-filter: blur(14px) saturate(140%);
+      transition:transform .1s ease,box-shadow .15s ease,border-color .15s ease;
+      backdrop-filter:blur(14px) saturate(140%);
     }
-    :root[data-theme="dark"] .opt{ background: rgba(255,255,255,.04); }
-    .opt:hover{
-      box-shadow: var(--shadow);
-      border-color: rgba(24,198,255,.55);
-      transform: translateY(-1px);
-    }
-    .opt:active{ transform: translateY(0px); }
-    .opt:focus-visible{ outline:none; box-shadow: var(--ring); }
-    .opt .title{ font-weight: 1000; font-size:1.08rem; margin:0; }
-    .opt .desc{ margin:8px 0 0; color:var(--muted); font-size:.96rem; }
+    :root[data-theme="dark"] .opt{background:rgba(255,255,255,.04)}
+    .opt:hover{box-shadow:var(--shadow);border-color:rgba(24,198,255,.55);transform:translateY(-1px)}
+    .opt:active{transform:translateY(0)}
+    .opt:focus-visible{outline:0;box-shadow:var(--ring)}
+    .opt .title{font-weight:1000;font-size:1.08rem;margin:0}
+    .opt .desc{margin:8px 0 0;color:var(--muted);font-size:.96rem}
 
     .info{
       margin-top:14px;
       border:1px solid var(--border);
-      border-radius: 20px;
+      border-radius:20px;
       padding:14px;
-      background: rgba(255,255,255,.52);
-      backdrop-filter: blur(14px) saturate(140%);
+      background:rgba(255,255,255,.52);
+      backdrop-filter:blur(14px) saturate(140%);
     }
-    :root[data-theme="dark"] .info{ background: rgba(255,255,255,.04); }
-
+    :root[data-theme="dark"] .info{background:rgba(255,255,255,.04)}
     .info .headline{
       display:flex;
       align-items:center;
@@ -486,7 +385,6 @@
       flex-wrap:wrap;
       margin-bottom:8px;
     }
-
     .badge{
       display:inline-flex;
       align-items:center;
@@ -494,67 +392,50 @@
       padding:8px 10px;
       border-radius:999px;
       border:1px solid rgba(22,163,74,.25);
-      background: rgba(22,163,74,.10);
-      color: #0f5132;
-      font-weight: 1000;
+      background:rgba(22,163,74,.1);
+      color:#0f5132;
+      font-weight:1000;
       font-size:.92rem;
     }
     :root[data-theme="dark"] .badge{
-      color: rgba(200,255,220,.95);
-      background: rgba(22,163,74,.12);
-      border-color: rgba(22,163,74,.25);
+      color:rgba(200,255,220,.95);
+      background:rgba(22,163,74,.12);
+      border-color:rgba(22,163,74,.25);
     }
 
-    .kpoints{
-      display:grid;
-      grid-template-columns:repeat(12,1fr);
-      gap:10px;
-      margin-top:10px;
-    }
+    .kpoints{display:grid;grid-template-columns:repeat(12,1fr);gap:10px;margin-top:10px}
     .k{
       grid-column:span 6;
       border:1px solid rgba(207,224,255,.55);
-      border-radius: 18px;
+      border-radius:18px;
       padding:12px;
-      background: rgba(255,255,255,.45);
-      backdrop-filter: blur(14px) saturate(140%);
+      background:rgba(255,255,255,.45);
+      backdrop-filter:blur(14px) saturate(140%);
     }
-    :root[data-theme="dark"] .k{
-      border-color: rgba(60,86,140,.35);
-      background: rgba(255,255,255,.04);
-    }
-    .k strong{ display:block; margin-bottom:4px; font-weight:1000; }
-    @media (max-width:860px){ .k{ grid-column:span 12; } }
+    :root[data-theme="dark"] .k{border-color:rgba(60,86,140,.35);background:rgba(255,255,255,.04)}
+    .k strong{display:block;margin-bottom:4px;font-weight:1000}
+    @media (max-width:860px){.k{grid-column:span 12}}
 
-    .plans{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:10px;
-      margin-top:8px;
-    }
-    @media (max-width:860px){ .plans{ grid-template-columns:1fr; } }
-
+    .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:8px}
+    @media (max-width:860px){.plans{grid-template-columns:1fr}}
     .plan{
       border:1px solid rgba(207,224,255,.55);
-      border-radius: 18px;
+      border-radius:18px;
       padding:12px;
-      background: rgba(255,255,255,.45);
-      backdrop-filter: blur(14px) saturate(140%);
+      background:rgba(255,255,255,.45);
+      backdrop-filter:blur(14px) saturate(140%);
     }
-    :root[data-theme="dark"] .plan{
-      border-color: rgba(60,86,140,.35);
-      background: rgba(255,255,255,.04);
-    }
-    .plan .pname{ font-weight:1000; margin:0; }
-    .plan .pdesc{ margin:6px 0 0; color:var(--muted); }
+    :root[data-theme="dark"] .plan{border-color:rgba(60,86,140,.35);background:rgba(255,255,255,.04)}
+    .plan .pname{font-weight:1000;margin:0}
+    .plan .pdesc{margin:6px 0 0;color:var(--muted)}
     .plan .price{
       margin-top:8px;
-      font-weight: 1000;
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      font-weight:1000;
+      background:linear-gradient(90deg,var(--accent),var(--accent-2));
       -webkit-background-clip:text;
       background-clip:text;
-      color: transparent;
-      font-size: 1.2rem;
+      color:transparent;
+      font-size:1.2rem;
     }
 
     .toast{
@@ -564,24 +445,21 @@
       transform:translateX(-50%) translateY(16px);
       opacity:0;
       pointer-events:none;
-      background: rgba(255,255,255,.65);
+      background:rgba(255,255,255,.65);
       color:var(--ink);
       padding:10px 14px;
-      border-radius: 14px;
+      border-radius:14px;
       border:1px solid rgba(24,198,255,.55);
-      box-shadow: var(--shadow);
-      transition: .18s ease;
-      z-index: 999;
-      max-width:min(92vw, 560px);
+      box-shadow:var(--shadow);
+      transition:.18s ease;
+      z-index:999;
+      max-width:min(92vw,560px);
       text-align:center;
-      font-weight: 900;
-      backdrop-filter: blur(14px) saturate(140%);
+      font-weight:900;
+      backdrop-filter:blur(14px) saturate(140%);
     }
-    :root[data-theme="dark"] .toast{ background: rgba(255,255,255,.06); }
-    .toast.show{
-      transform:translateX(-50%) translateY(0);
-      opacity:1;
-    }
+    :root[data-theme="dark"] .toast{background:rgba(255,255,255,.06)}
+    .toast.show{transform:translateX(-50%) translateY(0);opacity:1}
 
     .footer{
       margin:16px 0 0;
@@ -594,155 +472,50 @@
       gap:10px;
     }
 
-    /* Views */
-    [data-view]{ display:none; }
-    [data-view].active{ display:block; }
+    [data-view]{display:none}
+    [data-view].active{display:block}
 
-    .top-actions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      align-items:center;
-      justify-content:space-between;
-    }
-
+    .top-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between}
     .mini-note{
       border:1px dashed rgba(207,224,255,.75);
-      background: rgba(247,251,255,.55);
-      border-radius: 18px;
+      background:rgba(247,251,255,.55);
+      border-radius:18px;
       padding:12px;
       color:var(--muted);
       font-size:.95rem;
-      backdrop-filter: blur(14px) saturate(140%);
+      backdrop-filter:blur(14px) saturate(140%);
     }
-    :root[data-theme="dark"] .mini-note{
-      background: rgba(255,255,255,.04);
-      border-color: rgba(60,86,140,.35);
-    }
+    :root[data-theme="dark"] .mini-note{background:rgba(255,255,255,.04);border-color:rgba(60,86,140,.35)}
 
-    .sr-only{
-      position:absolute;
-      width:1px;
-      height:1px;
-      padding:0;
-      margin:-1px;
-      overflow:hidden;
-      clip:rect(0,0,0,0);
-      border:0;
-    }
-
-    /* ========================= WHOAMI (vista especial) ========================= */
-    .who-wrap{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:14px;
-      margin-top:12px;
-      align-items:stretch;
-    }
-    @media (max-width:860px){
-      .who-wrap{ grid-template-columns:1fr; }
-    }
+    /* WHOAMI */
+    .who-wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:14px;margin-top:12px;align-items:stretch}
+    @media (max-width:860px){.who-wrap{grid-template-columns:1fr}}
     .who-card{
       border:1px solid var(--border);
-      border-radius: 22px;
+      border-radius:22px;
       padding:16px;
-      background: rgba(255,255,255,.50);
-      backdrop-filter: blur(14px) saturate(140%);
-      box-shadow: 0 12px 30px rgba(16,48,96,.08);
+      background:rgba(255,255,255,.5);
+      backdrop-filter:blur(14px) saturate(140%);
+      box-shadow:0 12px 30px rgba(16,48,96,.08);
     }
-    :root[data-theme="dark"] .who-card{ background: rgba(255,255,255,.04); }
-
-    .who-hero{
-      display:flex;
-      gap:14px;
-      align-items:center;
-      flex-wrap:wrap;
-    }
+    :root[data-theme="dark"] .who-card{background:rgba(255,255,255,.04)}
+    .who-hero{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
     .who-avatar{
-      width:72px;
-      height:72px;
-      border-radius: 22px;
+      width:72px;height:72px;border-radius:22px;
       border:1px solid var(--border);
       background:
-        radial-gradient(60px 60px at 30% 20%, rgba(36,107,255,.35), transparent 60%),
-        radial-gradient(60px 60px at 90% 30%, rgba(24,198,255,.28), transparent 55%),
-        radial-gradient(60px 60px at 40% 95%, rgbargba(124,58,237,.22), transparent 60%),
+        radial-gradient(60px 60px at 30% 20%,rgba(36,107,255,.35),transparent 60%),
+        radial-gradient(60px 60px at 90% 30%,rgba(24,198,255,.28),transparent 55%),
+        radial-gradient(60px 60px at 40% 95%,rgba(124,58,237,.22),transparent 60%),
         rgba(255,255,255,.45);
-      display:grid;
-      place-items:center;
-      font-weight:1000;
-      letter-spacing:.6px;
-      box-shadow: 0 18px 50px rgba(16,48,96,.12);
+      display:grid;place-items:center;
+      font-weight:1000;letter-spacing:.6px;
+      box-shadow:0 18px 50px rgba(16,48,96,.12);
     }
-    :root[data-theme="dark"] .who-avatar{ background: rgba(255,255,255,.04); }
-
-    .who-name{ font-size:1.25rem; margin:0; font-weight:1000; }
-    .who-role{ margin:2px 0 0; color:var(--muted); font-weight:800; }
-
-    .who-actions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top:12px;
-    }
-
-    /* ======================================================
-       FIX CONTRASTE TEXTO · LIGHT / DARK
-       ====================================================== */
-    body,
-    .card,
-    .info,
-    .opt,
-    .plan,
-    .k,
-    label,
-    input,
-    select,
-    textarea,
-    p,
-    h1, h2, h3, h4, h5, h6,
-    span,
-    strong {
-      color: var(--ink) !important;
-    }
-
-    .lead,
-    .desc,
-    .status,
-    .muted,
-    .pdesc,
-    .mini-note,
-    .footer {
-      color: var(--muted) !important;
-    }
-
-    .pill {
-      color: var(--muted) !important;
-    }
-
-    .badge {
-      color: var(--ink) !important;
-    }
-
-    .btn,
-    .opt .title {
-      color: var(--ink) !important;
-    }
-
-    .btn-primary {
-      color: #fff !important;
-    }
-
-    :root[data-theme="dark"] input,
-    :root[data-theme="dark"] select,
-    :root[data-theme="dark"] textarea {
-      color: var(--ink) !important;
-    }
-
-    ::placeholder {
-      color: var(--muted) !important;
-      opacity: 0.9;
-    }
+    :root[data-theme="dark"] .who-avatar{background:rgba(255,255,255,.04)}
+    .who-name{font-size:1.25rem;margin:0;font-weight:1000}
+    .who-role{margin:2px 0 0;color:var(--muted);font-weight:800}
+    .who-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
   </style>
 </head>
 
@@ -751,11 +524,7 @@
   <div class="splash" id="splash" aria-label="Cargando Airconekta">
     <div class="splash-card" role="status" aria-live="polite">
       <div class="splash-logo" aria-hidden="true">
-        <img
-          class="logo-img"
-          alt=""
-          src="https://raw.githubusercontent.com/airconekta/airconekta/refs/heads/main/airconekta_logo_transparent.png"
-        />
+        <img class="logo-img" alt="" src="https://raw.githubusercontent.com/airconekta/airconekta/refs/heads/main/airconekta_logo_transparent.png" />
       </div>
       <div class="splash-title">AIRCONEKTA</div>
       <p class="splash-sub">Centro de solicitudes · Atención local</p>
@@ -768,16 +537,9 @@
     <nav class="nav" aria-label="Barra superior">
       <div class="brand">
         <div class="logo" aria-hidden="true">
-          <img
-            class="logo-img"
-            alt=""
-            src="https://raw.githubusercontent.com/airconekta/airconekta/refs/heads/main/airconekta_logo_transparent.png"
-          />
+          <img class="logo-img" alt="" src="https://raw.githubusercontent.com/airconekta/airconekta/refs/heads/main/airconekta_logo_transparent.png" />
         </div>
-        <div>
-          Airconekta
-          <small>Centro de solicitudes</small>
-        </div>
+        <div>Airconekta <small>Centro de solicitudes</small></div>
       </div>
 
       <div class="inline">
@@ -788,7 +550,7 @@
       </div>
     </nav>
 
-    <!-- ===== MENÚ PRINCIPAL ===== -->
+    <!-- HOME -->
     <section class="card active" data-view="home" id="viewHome">
       <div class="top-actions">
         <div>
@@ -798,7 +560,6 @@
         <span class="pill">📍 Empresa local · Atención directa</span>
       </div>
 
-      <!-- SOLO 3 botones (unificados) -->
       <div class="option-cards" aria-label="Opciones principales">
         <button class="opt" type="button" data-go="instalacion" aria-label="Presiona aquí para instalar">
           <p class="title">🛠️ Presiona aquí para instalar</p>
@@ -816,7 +577,6 @@
         </button>
       </div>
 
-      <!-- ===== INFO COMERCIAL (HOME SOLO WIFI) ===== -->
       <div class="info" aria-label="Puntos clave Airconekta">
         <div class="headline">
           <div class="badge">💰 $100 de saldo a favor</div>
@@ -837,13 +597,11 @@
             <p class="pdesc">Ideal para hogar y uso diario.</p>
             <div class="price">$300 MXN</div>
           </div>
-
           <div class="plan">
             <p class="pname">Hasta 20 Mb</p>
             <p class="pdesc">Más velocidad para varios equipos.</p>
             <div class="price">$400 MXN</div>
           </div>
-
           <div class="plan">
             <p class="pname">Hasta 25 Mb</p>
             <p class="pdesc">Para quienes quieren extra rendimiento.</p>
@@ -866,7 +624,7 @@
         <div class="divider"></div>
 
         <div class="mini-note">
-          🚀 <strong>Fibra óptica</strong> disponible en zonas especiales (se muestra al seleccionar colonia).<br>
+          🚀 <strong>Fibra óptica</strong> disponible en zonas especiales.<br>
           📍 Especial: <strong>San Vicente del Mar</strong> · <strong>Villas Miramar</strong>
         </div>
       </div>
@@ -877,20 +635,18 @@
       </div>
     </section>
 
-    <!-- ===== INSTALACIÓN ===== -->
+    <!-- INSTALACION -->
     <section class="card" data-view="instalacion" id="viewInstalacion">
       <div class="top-actions">
         <div>
           <h1>Solicitar instalación</h1>
           <p class="lead">
-            Completa tus datos. La colonia es <strong>opcional</strong>.
-            Al seleccionar una colonia se mostrarán automáticamente los <strong>planes correctos</strong> (WiFi o Fibra).
+            Selecciona tu colonia (requerida). Automáticamente se mostrarán los planes correctos (WiFi o Fibra).
           </p>
         </div>
         <button class="btn btn-ghost" type="button" data-back>← Volver</button>
       </div>
 
-      <!-- Aviso dinámico (OCULTO hasta seleccionar colonia) -->
       <div class="info" id="tipoServicioBox" aria-label="Tipo de servicio" style="display:none">
         <div class="headline">
           <div class="badge" id="tipoBadge">📶 WiFi</div>
@@ -910,13 +666,12 @@
 
       <form id="formInstalacion" class="grid" novalidate>
         <input type="hidden" id="i_colonia" name="colonia" />
-        <input type="hidden" id="i_tipo" name="tipo" value="wifi" />
+        <input type="hidden" id="i_tipo" name="tipo" value="" />
 
         <div class="col-12">
-          <label for="i_coloniaSelect">Colonia (opcional)</label>
-          <select id="i_coloniaSelect" name="coloniaSelect">
-            <option value="" selected>Selecciona una colonia…</option>
-
+          <label for="i_coloniaSelect">Colonia</label>
+          <select id="i_coloniaSelect" name="coloniaSelect" required>
+            <option value="" selected disabled>Selecciona tu colonia…</option>
             <optgroup label="📶 Colonias WiFi">
               <option>⚒️ El Canton, JAL</option>
               <option>⚒️ Fracc. Ex Haciendas San Angel, NAY</option>
@@ -932,14 +687,12 @@
               <option>⚒️ Fracc. Valle Marlin, NAY</option>
               <option>⚒️ Fracc. Zafiro Residencial, NAY</option>
             </optgroup>
-
             <optgroup label="🚀 Colonias Fibra (Zonas especiales)">
               <option>🚀 Villas Miramar, NAY</option>
               <option>🚀 San Vicente del Mar, NAY</option>
             </optgroup>
           </select>
-
-          <div class="status" id="i_coloniaStatus" style="margin-top:6px">Sin colonia seleccionada</div>
+          <div class="status" id="i_coloniaStatus" style="margin-top:6px">Selecciona tu colonia para ver planes</div>
         </div>
 
         <div class="col-6">
@@ -949,16 +702,8 @@
 
         <div class="col-6">
           <label for="i_telefono">Teléfono</label>
-          <input
-            id="i_telefono"
-            name="telefono"
-            inputmode="numeric"
-            autocomplete="tel"
-            placeholder="10 dígitos"
-            pattern="[0-9]{10}"
-            title="Debe contener exactamente 10 dígitos (solo números 0-9)"
-            required
-          />
+          <input id="i_telefono" name="telefono" inputmode="numeric" autocomplete="tel" placeholder="10 dígitos"
+                 pattern="[0-9]{10}" title="Debe contener exactamente 10 dígitos (solo números 0-9)" required />
         </div>
 
         <div class="col-12">
@@ -983,8 +728,10 @@
 
         <div class="col-6">
           <label for="i_plan">Plan deseado</label>
-          <select id="i_plan" name="plan" required></select>
-          <div class="status" id="i_planHint" style="margin-top:6px">Selecciona tu plan</div>
+          <select id="i_plan" name="plan" required disabled>
+            <option value="" selected disabled>Selecciona primero tu colonia</option>
+          </select>
+          <div class="status" id="i_planHint" style="margin-top:6px">Primero elige tu colonia</div>
         </div>
 
         <div class="col-6">
@@ -1008,7 +755,7 @@
       </div>
     </section>
 
-    <!-- ===== CAMBIO ===== -->
+    <!-- CAMBIO -->
     <section class="card" data-view="cambio" id="viewCambio">
       <div class="top-actions">
         <div>
@@ -1026,16 +773,8 @@
 
         <div class="col-6">
           <label for="c_telefono">Teléfono de contacto</label>
-          <input
-            id="c_telefono"
-            name="telefono"
-            inputmode="numeric"
-            autocomplete="tel"
-            placeholder="10 dígitos"
-            pattern="[0-9]{10}"
-            title="Debe contener exactamente 10 dígitos (solo números 0-9)"
-            required
-          />
+          <input id="c_telefono" name="telefono" inputmode="numeric" autocomplete="tel" placeholder="10 dígitos"
+                 pattern="[0-9]{10}" title="Debe contener exactamente 10 dígitos (solo números 0-9)" required />
         </div>
 
         <div class="col-6">
@@ -1074,7 +813,7 @@
       </div>
     </section>
 
-    <!-- ===== CANCELACIÓN ===== -->
+    <!-- CANCELACION -->
     <section class="card" data-view="cancelacion" id="viewCancelacion">
       <div class="top-actions">
         <div>
@@ -1092,16 +831,8 @@
 
         <div class="col-6">
           <label for="x_telefono">Teléfono de contacto</label>
-          <input
-            id="x_telefono"
-            name="telefono"
-            inputmode="numeric"
-            autocomplete="tel"
-            placeholder="10 dígitos"
-            pattern="[0-9]{10}"
-            title="Debe contener exactamente 10 dígitos (solo números 0-9)"
-            required
-          />
+          <input id="x_telefono" name="telefono" inputmode="numeric" autocomplete="tel" placeholder="10 dígitos"
+                 pattern="[0-9]{10}" title="Debe contener exactamente 10 dígitos (solo números 0-9)" required />
         </div>
 
         <div class="col-6">
@@ -1134,23 +865,71 @@
         <span style="opacity:.85">Gracias por tu tiempo</span>
       </div>
     </section>
+
+    <!-- ===== WHOAMI (vista oculta por hash) ===== -->
+    <section class="card" data-view="whoami" id="viewWhoami" aria-label="Whoami">
+      <div class="top-actions">
+        <div>
+          <h1 style="margin:0">Whoami</h1>
+          <p class="lead" style="margin:6px 0 0">Vista especial (solo con <b>#whoami</b>).</p>
+        </div>
+        <button class="btn btn-ghost" type="button" id="whoBackBtn">← Volver</button>
+      </div>
+
+      <div class="who-wrap">
+        <div class="who-card">
+          <div class="who-hero">
+            <div class="who-avatar" aria-hidden="true">JE</div>
+            <div>
+              <p class="who-name" id="whoName">—</p>
+              <p class="who-role" id="whoRole">—</p>
+            </div>
+            <span class="pill">🧩 Debug route · #whoami</span>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="kpoints">
+            <div class="k"><strong>📞 Teléfono</strong><span class="status" id="whoPhonePretty">—</span></div>
+            <div class="k"><strong>🟢 WhatsApp</strong><span class="status">Toca “Abrir chat”</span></div>
+            <div class="k"><strong>🧠 Tip</strong><span class="status">En consola también aparece tu firma</span></div>
+            <div class="k"><strong>🔒 Nota</strong><span class="status">Solo aparece con #whoami</span></div>
+          </div>
+
+          <div class="who-actions">
+            <a class="btn btn-primary" id="whoWhatsBtn" href="#" rel="noopener noreferrer">🟢 Abrir chat</a>
+            <a class="btn" id="whoCallBtn" href="#">📞 Llamar</a>
+            <button class="btn" type="button" id="whoCopyBtn">📋 Copiar datos</button>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="mini-note" style="margin-top:0">
+            Si llegaste aquí por accidente: vuelve o borra el hash (<b>#whoami</b>) de la URL.
+          </div>
+        </div>
+
+        <div class="who-card">
+          <h2 style="margin:0 0 8px">🔎 ¿Cómo sé que sí funciona?</h2>
+          <div class="mini-note" style="margin-top:0">
+            <b>1)</b> Entra a <b>#whoami</b> al final de la URL.<br><br>
+            <b>2)</b> Abre DevTools → Console y recarga: verás tu firma.<br><br>
+            <b>3)</b> “Ver código fuente”: también verás este bloque de firma.
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
   <script>
-    // =====================
-    // CONFIGURACIÓN
-    // =====================
+    /* =====================
+       CONFIG
+    ===================== */
     const NUMERO_DESTINO = "5213222108817";
+    const COLONIAS_FIBRA = ["🚀 Villas Miramar, NAY", "🚀 San Vicente del Mar, NAY"];
 
-    // Colonias por tipo
-    const COLONIAS_FIBRA = [
-      "🚀 Villas Miramar, NAY",
-      "🚀 San Vicente del Mar, NAY"
-    ];
-
-    // Firma (debug / whoami)
     const WHOAMI = {
       name: "Jair Elizondo",
       phonePretty: "322 243 9782",
@@ -1160,13 +939,12 @@
       webHint: "Escribe #whoami al final de la URL"
     };
 
-    // LOGOS (por si quieres reusarlos en JS)
     const LOGO_1024 = "https://raw.githubusercontent.com/airconekta/airconekta/refs/heads/main/airconekta_logo_1024.png";
-    const LOGO_512 = "https://raw.githubusercontent.com/airconekta/airconekta/refs/heads/main/airconekta_logo_512.png";
-    const LOGO_TRANS = "https://raw.githubusercontent.com/airconekta/airconekta/refs/heads/main/airconekta_logo_transparent.png";
+    const LOGO_512  = "https://raw.githubusercontent.com/airconekta/airconekta/refs/heads/main/airconekta_logo_512.png";
+    const LOGO_TRANS= "https://raw.githubusercontent.com/airconekta/airconekta/refs/heads/main/airconekta_logo_transparent.png";
 
-    const $ = (sel) => document.querySelector(sel);
-    const $$ = (sel) => Array.from(document.querySelectorAll(sel));
+    const $  = (s) => document.querySelector(s);
+    const $$ = (s) => Array.from(document.querySelectorAll(s));
 
     const toast = (msg) => {
       const t = $("#toast");
@@ -1175,168 +953,210 @@
       setTimeout(() => t.classList.remove("show"), 1800);
     };
 
-    // =====================
-    // Firma en consola (solo al depurar)
-    // =====================
+    /* Firma consola */
     (function consoleSignature(){
       try{
         const line = "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━";
         console.log("%c" + line, "color:#18c6ff;font-weight:900");
-        console.log(
-          "%cAIRCONEKTA · Firma de desarrollo",
-          "color:#246bff;font-size:14px;font-weight:900"
-        );
-        console.log(
-          "%c" + WHOAMI.name + "  ·  " + WHOAMI.phonePretty + "  ·  " + WHOAMI.hint,
-          "color:#7c3aed;font-size:12px;font-weight:900"
-        );
+        console.log("%cAIRCONEKTA · Firma de desarrollo","color:#246bff;font-size:14px;font-weight:900");
+        console.log("%c" + WHOAMI.name + "  ·  " + WHOAMI.phonePretty + "  ·  " + WHOAMI.hint,"color:#7c3aed;font-size:12px;font-weight:900");
         console.log("%c" + WHOAMI.webHint, "color:#5b6b86;font-size:12px;font-weight:800");
         console.log("%c" + line, "color:#18c6ff;font-weight:900");
       }catch{}
     })();
 
-    // =====================
-    // Splash (3s)
-    // =====================
+    /* =====================
+       Splash
+    ===================== */
     const splash = document.getElementById("splash");
     const hideSplash = () => splash?.classList.add("hide");
-    splash?.addEventListener("click", hideSplash, { passive: true });
-    window.addEventListener("load", () => {
-      setTimeout(hideSplash, 3000);
-    });
+    splash?.addEventListener("click", hideSplash, { passive:true });
+    window.addEventListener("load", () => setTimeout(hideSplash, 3000));
 
-    // =====================
-    // Año
-    // =====================
-    $("#year").textContent = new Date().getFullYear();
-    $$(".year").forEach((el) => (el.textContent = new Date().getFullYear()));
+    /* Año */
+    $("#year").textContent = (new Date()).getFullYear();
+    $$(".year").forEach(el => el.textContent = (new Date()).getFullYear());
 
-    // =====================
-    // Tema (Light/Dark)
-    // =====================
+    /* =====================
+       Theme
+    ===================== */
     const THEME_KEY = "airconekta_theme";
-
-    function applyTheme(theme) {
+    function applyTheme(theme){
       document.documentElement.setAttribute("data-theme", theme);
       localStorage.setItem(THEME_KEY, theme);
-
       const icon = theme === "dark" ? "🌙" : "☀️";
       $("#themeBtn").textContent = icon;
-      $("#themeBtn").setAttribute(
-        "aria-label",
-        theme === "dark" ? "Cambiar a tema claro" : "Cambiar a tema oscuro"
-      );
+      $("#themeBtn").setAttribute("aria-label", theme === "dark" ? "Cambiar a tema claro" : "Cambiar a tema oscuro");
     }
-
     const savedTheme = localStorage.getItem(THEME_KEY);
-    if (savedTheme) {
-      applyTheme(savedTheme);
-    } else {
-      const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-      applyTheme(prefersDark ? "dark" : "light");
-    }
+    if (savedTheme) applyTheme(savedTheme);
+    else applyTheme(window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
 
     $("#themeBtn").addEventListener("click", () => {
-      const current = document.documentElement.getAttribute("data-theme") || "light";
-      applyTheme(current === "dark" ? "light" : "dark");
+      const cur = document.documentElement.getAttribute("data-theme") || "light";
+      applyTheme(cur === "dark" ? "light" : "dark");
       toast("Tema actualizado ✅");
     });
 
-    // =====================
-    // NAVEGACIÓN DE VISTAS
-    // =====================
+    /* =====================
+       Router de vistas (home/instalacion/cambio/cancelacion/whoami)
+    ===================== */
     const VIEW_KEY = "airconekta_last_view";
 
-    function showView(name) {
-      $$("[data-view]").forEach((v) => v.classList.remove("active"));
-      const view = document.querySelector(`[data-view="${name}"]`);
-      if (view) view.classList.add("active");
+    function showView(name){
+      $$("[data-view]").forEach(el => el.classList.remove("active"));
+      const el = document.querySelector(`[data-view="${name}"]`);
+      if (el) el.classList.add("active");
 
-      if (name !== "whoami") sessionStorage.setItem(VIEW_KEY, name);
-
-      try {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      } catch {
-        window.scrollTo(0, 0);
+      if (name !== "whoami"){
+        sessionStorage.setItem(VIEW_KEY, name);
       }
+
+      try{ window.scrollTo({ top:0, behavior:"smooth" }); }
+      catch{ window.scrollTo(0,0); }
+    }
+
+    /* =====================
+       #whoami
+    ===================== */
+    function renderWhoami(){
+      $("#whoName").textContent = WHOAMI.name;
+      $("#whoRole").textContent = WHOAMI.role;
+      $("#whoPhonePretty").textContent = WHOAMI.phonePretty;
+
+      const waLink =
+        `https://api.whatsapp.com/send?phone=52${WHOAMI.phoneDigits}` +
+        `&text=${encodeURIComponent("Hola 👋 " + WHOAMI.name + ", necesito soporte / info de Airconekta.")}` +
+        `&type=phone_number&app_absent=0`;
+
+      $("#whoWhatsBtn").setAttribute("href", waLink);
+      $("#whoCallBtn").setAttribute("href", `tel:+52${WHOAMI.phoneDigits}`);
+
+      $("#whoCopyBtn").onclick = async () => {
+        const text =
+          `${WHOAMI.name}\n` +
+          `${WHOAMI.phonePretty}\n` +
+          `Airconekta\n` +
+          `Tip: ${location.origin + location.pathname}#whoami`;
+        try{
+          await navigator.clipboard.writeText(text);
+          toast("Datos copiados ✅");
+        }catch{
+          toast("No se pudo copiar (permiso del navegador)");
+        }
+      };
+
+      $("#whoBackBtn").onclick = () => {
+        history.replaceState(null, "", location.pathname + location.search);
+        const last = sessionStorage.getItem(VIEW_KEY) || "home";
+        showView(last);
+      };
+    }
+
+    function handleHashRoute(){
+      const h = (location.hash || "").toLowerCase().trim();
+      if (h === "#whoami"){
+        renderWhoami();
+        showView("whoami");
+        return true;
+      }
+      return false;
+    }
+
+    window.addEventListener("hashchange", () => {
+      if (!handleHashRoute()){
+        const last = sessionStorage.getItem(VIEW_KEY) || "home";
+        showView(last);
+      }
+    }, { passive:true });
+
+    function clearHashIfAny(){
+      if ((location.hash || "").toLowerCase().trim() === "#whoami") return;
+      if (location.hash) history.replaceState(null, "", location.pathname + location.search);
     }
 
     $("#menuBtn").addEventListener("click", () => {
-      if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+      clearHashIfAny();
       showView("home");
       toast("Opciones listas ✅");
     });
 
-    $$("[data-go]").forEach((btn) => {
+    $$("[data-go]").forEach(btn => {
       btn.addEventListener("click", () => {
-        const v = btn.getAttribute("data-go");
-        if (location.hash) history.replaceState(null, "", location.pathname + location.search);
-        showView(v);
-
+        const target = btn.getAttribute("data-go");
+        clearHashIfAny();
+        showView(target);
         setTimeout(() => {
-          const firstInput = document.querySelector(
-            `[data-view="${v}"] input, [data-view="${v}"] select, [data-view="${v}"] textarea`
-          );
-          firstInput?.focus?.();
+          const first = document.querySelector(`[data-view="${target}"] input, [data-view="${target}"] select, [data-view="${target}"] textarea`);
+          first?.focus?.();
         }, 60);
       });
     });
 
-    $$("[data-back]").forEach((b) => b.addEventListener("click", () => {
-      if (location.hash) history.replaceState(null, "", location.pathname + location.search);
-      showView("home");
-    }));
+    $$("[data-back]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        clearHashIfAny();
+        showView("home");
+      });
+    });
 
-    // =====================
-    // COMPARTIR
-    // =====================
     $("#shareBtn").addEventListener("click", async (e) => {
       e.preventDefault();
-
-      if (navigator.share) {
-        try {
+      if (navigator.share){
+        try{
           await navigator.share({
             title: "Airconekta · Centro de Solicitudes",
             text: "Instalación, Cambio de domicilio y Cancelación (WhatsApp listo)",
-            url: location.href,
+            url: location.href
           });
-        } catch {}
+        }catch{}
       } else {
-        try {
+        try{
           await navigator.clipboard?.writeText(location.href);
           toast("Enlace copiado ✅");
-        } catch {
+        }catch{
           toast("Copia el enlace desde la barra del navegador");
         }
       }
     });
 
-    // =====================
-    // INSTALACIÓN: colonia -> solo WiFi o solo Fibra
-    // + el cuadro se muestra SOLO cuando hay colonia seleccionada
-    // =====================
+    /* =====================
+       Instalación: colonia -> tipo -> planes (STRICT)
+       - colonia requerida
+       - planes SOLO después de colonia
+       - plan DISABLED hasta colonia
+    ===================== */
     const i_coloniaSelect = $("#i_coloniaSelect");
     const i_coloniaHidden = $("#i_colonia");
     const i_coloniaStatus = $("#i_coloniaStatus");
-
-    const i_tipoHidden = $("#i_tipo");
+    const i_tipoHidden    = $("#i_tipo");
     const tipoServicioBox = $("#tipoServicioBox");
-    const tipoBadge = $("#tipoBadge");
-    const tipoStatus = $("#tipoStatus");
-    const wifiBox = $("#wifiBox");
-    const fibraBox = $("#fibraBox");
-    const i_plan = $("#i_plan");
-    const i_planHint = $("#i_planHint");
+    const tipoBadge       = $("#tipoBadge");
+    const tipoStatus      = $("#tipoStatus");
+    const wifiBox         = $("#wifiBox");
+    const fibraBox        = $("#fibraBox");
+    const i_plan          = $("#i_plan");
+    const i_planHint      = $("#i_planHint");
+
+    function isFibraColonia(v){
+      return COLONIAS_FIBRA.includes((v || "").trim());
+    }
+
+    function lockPlan(){
+      i_plan.disabled = true;
+      i_plan.innerHTML = `<option value="" selected disabled>Selecciona primero tu colonia</option>`;
+      i_planHint.textContent = "Primero elige tu colonia";
+    }
 
     function setPlanOptions(tipo){
+      i_plan.disabled = false;
       i_plan.innerHTML = "";
-
-      const placeholder = document.createElement("option");
-      placeholder.value = "";
-      placeholder.disabled = true;
-      placeholder.selected = true;
-      placeholder.textContent = "Selecciona un plan";
-      i_plan.appendChild(placeholder);
+      const ph = document.createElement("option");
+      ph.value = "";
+      ph.disabled = true;
+      ph.selected = true;
+      ph.textContent = "Selecciona un plan";
+      i_plan.appendChild(ph);
 
       if (tipo === "fibra"){
         const o1 = document.createElement("option");
@@ -1365,210 +1185,198 @@
       }
     }
 
-    function isFibraColonia(val){
-      return COLONIAS_FIBRA.includes((val || "").trim());
-    }
-
     function applyTipoServicio(tipo){
-      const isFibra = tipo === "fibra";
+      const isFibra = (tipo === "fibra");
       i_tipoHidden.value = tipo;
 
-      tipoBadge.textContent = isFibra ? "🚀 FIBRA ÓPTICA" : "📶 WiFi";
+      tipoBadge.textContent  = isFibra ? "🚀 FIBRA ÓPTICA" : "📶 WiFi";
       tipoStatus.textContent = isFibra ? "Mostrando planes de fibra (zona especial)" : "Mostrando planes inalámbricos";
 
-      wifiBox.style.display = isFibra ? "none" : "grid";
+      wifiBox.style.display  = isFibra ? "none" : "grid";
       fibraBox.style.display = isFibra ? "grid" : "none";
 
       setPlanOptions(tipo);
     }
 
-    function setInstalacionColonia(val) {
-      const v = (val || "").trim();
-      i_coloniaHidden.value = v;
-      i_coloniaStatus.textContent = v ? `Colonia: ${v}` : "Sin colonia seleccionada";
+    function setInstalacionColonia(val){
+      const t = (val || "").trim();
+      i_coloniaHidden.value = t;
 
-      if (!v){
+      if (!t){
+        i_coloniaStatus.textContent = "Selecciona tu colonia para ver planes";
         tipoServicioBox.style.display = "none";
-        applyTipoServicio("wifi");
+        i_tipoHidden.value = "";
+        lockPlan();
         return;
       }
 
+      i_coloniaStatus.textContent = `Colonia: ${t}`;
       tipoServicioBox.style.display = "block";
-      applyTipoServicio(isFibraColonia(v) ? "fibra" : "wifi");
+
+      const tipo = isFibraColonia(t) ? "fibra" : "wifi";
+      applyTipoServicio(tipo);
     }
 
     i_coloniaSelect.addEventListener("change", () => setInstalacionColonia(i_coloniaSelect.value));
 
-    // Inicial: cuadro oculto y planes wifi precargados
-    setPlanOptions("wifi");
+    // Estado inicial: sin colonia -> plan bloqueado, sin tipo
+    setInstalacionColonia("");
 
-    // =====================
-    // INSTALACIÓN: geolocalización + envío
-    // =====================
+    function digits10FromInput(selector){
+      const el = $(selector);
+      const n = (el.value || "").replace(/\D+/g, "");
+      if (n && n !== el.value) el.value = n;
+      return (n.length === 10) ? n : null;
+    }
+
+    function abrirWhatsApp(text){
+      const url =
+        `https://api.whatsapp.com/send?phone=${NUMERO_DESTINO}` +
+        `&text=${encodeURIComponent(text)}` +
+        `&type=phone_number&app_absent=0`;
+      window.open(url, "_blank", "noopener,noreferrer");
+      toast("Abriendo WhatsApp…");
+    }
+
     $("#i_geoBtn").addEventListener("click", () => {
-      const s = $("#i_geoStatus");
-
-      if (!("geolocation" in navigator)) {
-        s.textContent = "Geolocalización no soportada";
+      const st = $("#i_geoStatus");
+      if (!("geolocation" in navigator)){
+        st.textContent = "Geolocalización no soportada";
         toast("Tu navegador no soporta ubicación");
         return;
       }
-
-      s.textContent = "Obteniendo ubicación…";
-
+      st.textContent = "Obteniendo ubicación…";
       navigator.geolocation.getCurrentPosition(
         (pos) => {
           const { latitude, longitude } = pos.coords;
           $("#i_lat").value = latitude.toFixed(6);
           $("#i_lng").value = longitude.toFixed(6);
-          s.textContent = `Lat ${$("#i_lat").value}, Lng ${$("#i_lng").value}`;
+          st.textContent = `Lat ${$("#i_lat").value}, Lng ${$("#i_lng").value}`;
           toast("Ubicación lista ✅");
         },
         (err) => {
           console.warn(err);
-          s.textContent = "No se pudo obtener ubicación";
+          st.textContent = "No se pudo obtener ubicación";
           toast("No se pudo obtener ubicación");
         },
-        { enableHighAccuracy: true, timeout: 12000, maximumAge: 0 }
+        { enableHighAccuracy:true, timeout:12000, maximumAge:0 }
       );
     });
 
-    function digits10FromInput(inputSel) {
-      const el = $(inputSel);
-      const raw = (el.value || "").replace(/\D+/g, "");
-      if (raw && raw !== el.value) el.value = raw;
-      return raw.length === 10 ? raw : null;
-    }
-
-    function abrirWhatsApp(mensaje) {
-      const url =
-        `https://api.whatsapp.com/send?phone=${NUMERO_DESTINO}` +
-        `&text=${encodeURIComponent(mensaje)}` +
-        `&type=phone_number&app_absent=0`;
-
-      window.open(url, "_blank", "noopener,noreferrer");
-      toast("Abriendo WhatsApp…");
-    }
-
     $("#formInstalacion").addEventListener("submit", (e) => {
       e.preventDefault();
-
       const form = $("#formInstalacion");
-      if (!form.checkValidity()) {
+      if (!form.checkValidity()){
         form.reportValidity();
         return;
       }
 
-      const tel10 = digits10FromInput("#i_telefono");
-      if (!tel10) {
+      if (!i_coloniaHidden.value){
+        toast("Selecciona tu colonia");
+        i_coloniaSelect.focus();
+        return;
+      }
+
+      if (i_plan.disabled || !i_plan.value){
+        toast("Selecciona un plan");
+        i_plan.focus();
+        return;
+      }
+
+      const tel = digits10FromInput("#i_telefono");
+      if (!tel){
         toast("El teléfono debe tener 10 dígitos");
         $("#i_telefono").focus();
         return;
       }
 
-      const nombre = $("#i_nombre").value.trim();
+      const nombre    = $("#i_nombre").value.trim();
       const direccion = $("#i_direccion").value.trim();
-      const plan = $("#i_plan").value;
-      const tel = tel10;
-      const correo = $("#i_correo").value.trim();
-      const metodo = $("#i_metodo").value;
-      const colonia = (i_coloniaHidden.value || "").trim();
-      const lat = $("#i_lat").value;
-      const lng = $("#i_lng").value;
-      const tipo = (i_tipoHidden.value || "wifi").trim();
+      const plan      = $("#i_plan").value;
+      const correo    = $("#i_correo").value.trim();
+      const metodo    = $("#i_metodo").value;
+      const colonia   = i_coloniaHidden.value.trim();
+      const lat       = $("#i_lat").value;
+      const lng       = $("#i_lng").value;
+      const tipo      = (i_tipoHidden.value || "").trim();
 
       let msg = "Hola 👋\nMe gustaría hablar sobre la contratación de servicio.\n\n";
       msg += "*Tipo de solicitud:* Instalación\n";
+      msg += `*Colonia:* ${colonia}\n`;
       msg += `*Tipo de servicio:* ${tipo === "fibra" ? "FIBRA ÓPTICA" : "WiFi"}\n`;
       msg += `*Nombre:* ${nombre}\n`;
-      msg += `*Dirección:* ${direccion}${colonia ? `, ${colonia}` : ""}\n`;
+      msg += `*Dirección:* ${direccion}, ${colonia}\n`;
       msg += `*Plan deseado:* ${plan}\n`;
       msg += `*Teléfono:* ${tel}\n`;
       msg += `*Correo:* ${correo}\n`;
       msg += `*Método de contacto:* ${metodo}\n`;
-
-      if (tipo === "fibra"){
-        msg += `*Instalación:* $450 MXN (especial)\n`;
-      } else {
-        msg += `*Instalación:* $999 MXN (pago único)\n`;
-      }
-
+      msg += (tipo === "fibra") ? "*Instalación:* $450 MXN (especial)\n" : "*Instalación:* $999 MXN (pago único)\n";
       if (lat && lng) msg += `*Ubicación:* https://www.google.com/maps?q=${lat},${lng}\n`;
 
       abrirWhatsApp(msg);
     });
 
-    // =====================
-    // CAMBIO: envío
-    // =====================
     $("#formCambio").addEventListener("submit", (e) => {
       e.preventDefault();
-
       const form = $("#formCambio");
-      if (!form.checkValidity()) {
+      if (!form.checkValidity()){
         form.reportValidity();
         return;
       }
 
-      const tel10 = digits10FromInput("#c_telefono");
-      if (!tel10) {
+      const tel = digits10FromInput("#c_telefono");
+      if (!tel){
         toast("El teléfono debe tener 10 dígitos");
         $("#c_telefono").focus();
         return;
       }
 
       const nombre = $("#c_nombre").value.trim();
-      const telefono = tel10;
-      const fecha = $("#c_fecha").value;
-      const hora = $("#c_hora").value;
-      const domicilioActual = $("#c_domicilioActual").value.trim();
-      const domicilioNuevo = $("#c_domicilioNuevo").value.trim();
-      const comentarios = $("#c_comentarios").value.trim();
+      const fecha  = $("#c_fecha").value;
+      const hora   = $("#c_hora").value;
+      const domA   = $("#c_domicilioActual").value.trim();
+      const domN   = $("#c_domicilioNuevo").value.trim();
+      const comm   = $("#c_comentarios").value.trim();
 
       let msg = "Hola 👋\nMe gustaría solicitar un *cambio de domicilio* de mi servicio.\n\n";
       msg += "*Tipo de solicitud:* Cambio de domicilio\n";
       msg += `*Nombre:* ${nombre}\n`;
-      msg += `*Teléfono de contacto:* ${telefono}\n`;
-      msg += `*Domicilio actual:*\n${domicilioActual}\n`;
-      msg += `*Nuevo domicilio:*\n${domicilioNuevo}\n`;
+      msg += `*Teléfono de contacto:* ${tel}\n`;
+      msg += `*Domicilio actual:*\n${domA}\n`;
+      msg += `*Nuevo domicilio:*\n${domN}\n`;
       msg += `*Fecha en la que me pueden recibir:* ${fecha || "No especificada"}\n`;
       msg += `*Hora en la que me pueden recibir:* ${hora || "No especificada"}\n`;
-      if (comentarios) msg += `*Comentarios adicionales:*\n${comentarios}\n`;
+      if (comm) msg += `*Comentarios adicionales:*\n${comm}\n`;
 
       abrirWhatsApp(msg);
     });
 
-    // =====================
-    // CANCELACIÓN: envío
-    // =====================
     $("#formCancelacion").addEventListener("submit", (e) => {
       e.preventDefault();
-
       const form = $("#formCancelacion");
-      if (!form.checkValidity()) {
+      if (!form.checkValidity()){
         form.reportValidity();
         return;
       }
 
-      const tel10 = digits10FromInput("#x_telefono");
-      if (!tel10) {
+      const tel = digits10FromInput("#x_telefono");
+      if (!tel){
         toast("El teléfono debe tener 10 dígitos");
         $("#x_telefono").focus();
         return;
       }
 
       const nombre = $("#x_nombre").value.trim();
-      const telefono = tel10;
-      const fecha = $("#x_fecha").value;
-      const hora = $("#x_hora").value;
-      const domicilio = $("#x_domicilio").value.trim();
+      const fecha  = $("#x_fecha").value;
+      const hora   = $("#x_hora").value;
+      const dom    = $("#x_domicilio").value.trim();
       const motivo = $("#x_motivo").value.trim();
 
       let msg = "Hola 👋\nMe gustaría solicitar la *cancelación* de mi servicio.\n\n";
       msg += "*Tipo de solicitud:* Cancelación\n";
       msg += `*Nombre:* ${nombre}\n`;
-      msg += `*Teléfono de contacto:* ${telefono}\n`;
-      msg += `*Domicilio completo del servicio:*\n${domicilio}\n`;
+      msg += `*Teléfono de contacto:* ${tel}\n`;
+      msg += `*Domicilio completo del servicio:*\n${dom}\n`;
       msg += `*Fecha en la que me pueden recibir:* ${fecha || "No especificada"}\n`;
       msg += `*Hora en la que me pueden recibir:* ${hora || "No especificada"}\n`;
       if (motivo) msg += `*Motivo de cancelación:*\n${motivo}\n`;
@@ -1576,14 +1384,14 @@
       abrirWhatsApp(msg);
     });
 
-    // =====================
-    // PWA (manifest + SW) simple (mejorado para GitHub Pages)
-    // =====================
+    /* =====================
+       PWA: manifest + SW (en memoria)
+    ===================== */
     const manifest = {
       name: "Airconekta Centro de Solicitudes",
       short_name: "Airconekta",
       description: "Instalación, Cambio de domicilio y Cancelación. Envío por WhatsApp.",
-      start_url: "./menu.html",
+      start_url: "./",
       scope: "./",
       display: "standalone",
       background_color: "#0b1220",
@@ -1595,74 +1403,66 @@
     };
 
     const manBlob = new Blob([JSON.stringify(manifest)], { type: "application/json" });
-    const manURL = URL.createObjectURL(manBlob);
-    const link = document.createElement("link");
+    const manURL  = URL.createObjectURL(manBlob);
+    const link    = document.createElement("link");
     link.rel = "manifest";
     link.href = manURL;
     document.head.appendChild(link);
 
-    if ("serviceWorker" in navigator) {
+    if ("serviceWorker" in navigator){
       const swCode = `
-        const CACHE = 'airconekta-centro-v3';
-        const CORE = ['./', './menu.html'];
-
+        const CACHE = 'airconekta-centro-v4';
+        const CORE = ['./'];
         self.addEventListener('install', (e) => {
           e.waitUntil(caches.open(CACHE).then((c) => c.addAll(CORE)));
           self.skipWaiting();
         });
-
         self.addEventListener('activate', (e) => {
           e.waitUntil(self.clients.claim());
         });
-
         self.addEventListener('fetch', (e) => {
           const req = e.request;
           if (req.method !== 'GET') return;
-
           e.respondWith(
             caches.match(req).then((r) => r || fetch(req).then((res) => {
               const copy = res.clone();
               caches.open(CACHE).then((c) => c.put(req, copy)).catch(() => {});
               return res;
-            }).catch(() => caches.match('./menu.html')))
+            }).catch(() => caches.match('./')))
           );
         });
       `;
-
-      const swBlob = new Blob([swCode], { type: "text/javascript" });
-      const swURL = URL.createObjectURL(swBlob);
+      const swBlob = new Blob([swCode], { type:"text/javascript" });
+      const swURL  = URL.createObjectURL(swBlob);
       navigator.serviceWorker.register(swURL).catch(() => {});
     }
 
-    // Botón instalar PWA (si aplica)
     let deferredPrompt;
-
     window.addEventListener("beforeinstallprompt", (e) => {
       e.preventDefault();
       deferredPrompt = e;
-
       const btn = document.getElementById("installBtn");
       btn.style.display = "inline-flex";
-
       btn.onclick = async () => {
         btn.disabled = true;
-        try {
+        try{
           await deferredPrompt.prompt();
           await deferredPrompt.userChoice;
-        } finally {
+        }finally{
           deferredPrompt = null;
           btn.style.display = "none";
         }
       };
     });
 
-    // =====================
-    // Vista inicial
-    // =====================
-    (function initView(){
-      if (!sessionStorage.getItem(VIEW_KEY)) sessionStorage.setItem(VIEW_KEY, "home");
+    /* =====================
+       INICIO: si entra con #whoami, manda ahí.
+    ===================== */
+    if (!sessionStorage.getItem(VIEW_KEY)) sessionStorage.setItem(VIEW_KEY, "home");
+    const routed = handleHashRoute();
+    if (!routed){
       showView(sessionStorage.getItem(VIEW_KEY) || "home");
-    })();
+    }
   </script>
 </body>
 </html>
