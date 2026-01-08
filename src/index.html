@@ -36,7 +36,7 @@
       --ink:#0b1426;
       --muted:#475a7a;
 
-      /* Acentos (mismo estilo, un poco más “profundos” para que no quemen) */
+      /* Acentos */
       --accent:#1f5cff;
       --accent-2:#14bdf2;
       --accent-3:#6d28d9;
@@ -53,7 +53,6 @@
       --shadow:0 14px 40px rgba(16,48,96,.12);
       --shadow-2:0 18px 60px rgba(16,48,96,.16);
 
-      /* Ring más visible en claro */
       --ring:0 0 0 4px rgba(31,92,255,.18);
 
       --maxw:1040px;
@@ -66,11 +65,9 @@
       --card:rgba(10,14,28,.78);
       --card-solid:#0b1220;
 
-      /* Texto más legible en oscuro */
       --ink:#f1f6ff;
       --muted:#b7c5e6;
 
-      /* Acentos un poco más “neón controlado” en dark */
       --accent:#3b73ff;
       --accent-2:#22d3ff;
       --accent-3:#8b5cf6;
@@ -285,6 +282,7 @@
 
     .btn{
       appearance:none;
+      -webkit-appearance:none;
       cursor:pointer;
       user-select:none;
       border:1px solid rgba(36,107,255,.65);
@@ -301,6 +299,7 @@
       gap:8px;
       line-height:1;
       backdrop-filter:blur(12px) saturate(120%);
+      font:inherit;
     }
     :root[data-theme="dark"] .btn{background:rgba(255,255,255,.06)}
     .btn:hover{box-shadow:var(--ring);border-color:rgba(36,107,255,.95)}
@@ -371,7 +370,11 @@
 
     .option-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
     @media (max-width:860px){.option-cards{grid-template-columns:1fr}}
+
+    /* ✅ FIX: asegurar color del texto en botones (.opt) en tema claro (y consistente en todos los navegadores) */
     .opt{
+      appearance:none;
+      -webkit-appearance:none;
       border:1px solid var(--border);
       border-radius:20px;
       padding:16px;
@@ -381,13 +384,15 @@
       text-align:left;
       transition:transform .1s ease,box-shadow .15s ease,border-color .15s ease;
       backdrop-filter:blur(14px) saturate(140%);
+      color:var(--ink);     /* <- esto evita que “se pierdan” letras en claro */
+      font:inherit;         /* <- evita colores/tipografías raras por default del navegador */
     }
     :root[data-theme="dark"] .opt{background:rgba(255,255,255,.04)}
     .opt:hover{box-shadow:var(--shadow);border-color:rgba(24,198,255,.55);transform:translateY(-1px)}
     .opt:active{transform:translateY(0)}
     .opt:focus-visible{outline:0;box-shadow:var(--ring)}
-    .opt .title{font-weight:1000;font-size:1.08rem;margin:0}
-    .opt .desc{margin:8px 0 0;color:var(--muted);font-size:.96rem}
+    .opt .title{font-weight:1000;font-size:1.08rem;margin:0;color:var(--ink)}   /* <- refuerzo */
+    .opt .desc{margin:8px 0 0;color:var(--muted);font-size:.96rem}              /* <- refuerzo */
 
     .info{
       margin-top:14px;
@@ -432,6 +437,7 @@
       padding:12px;
       background:rgba(255,255,255,.45);
       backdrop-filter:blur(14px) saturate(140%);
+      color:var(--ink);
     }
     :root[data-theme="dark"] .k{border-color:rgba(60,86,140,.35);background:rgba(255,255,255,.04)}
     .k strong{display:block;margin-bottom:4px;font-weight:1000}
@@ -445,6 +451,7 @@
       padding:12px;
       background:rgba(255,255,255,.45);
       backdrop-filter:blur(14px) saturate(140%);
+      color:var(--ink);
     }
     :root[data-theme="dark"] .plan{border-color:rgba(60,86,140,.35);background:rgba(255,255,255,.04)}
     .plan .pname{font-weight:1000;margin:0}
@@ -518,6 +525,7 @@
       background:rgba(255,255,255,.5);
       backdrop-filter:blur(14px) saturate(140%);
       box-shadow:0 12px 30px rgba(16,48,96,.08);
+      color:var(--ink);
     }
     :root[data-theme="dark"] .who-card{background:rgba(255,255,255,.04)}
     .who-hero{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
@@ -532,6 +540,7 @@
       display:grid;place-items:center;
       font-weight:1000;letter-spacing:.6px;
       box-shadow:0 18px 50px rgba(16,48,96,.12);
+      color:var(--ink);
     }
     :root[data-theme="dark"] .who-avatar{background:rgba(255,255,255,.04)}
     .who-name{font-size:1.25rem;margin:0;font-weight:1000}
@@ -1020,7 +1029,7 @@
     });
 
     /* =====================
-       Router de vistas (home/instalacion/cambio/cancelacion/whoami)
+       Router de vistas
     ===================== */
     const VIEW_KEY = "airconekta_last_view";
 
@@ -1143,9 +1152,6 @@
 
     /* =====================
        Instalación: colonia -> tipo -> planes (STRICT)
-       - colonia requerida
-       - planes SOLO después de colonia
-       - plan DISABLED hasta colonia
     ===================== */
     const i_coloniaSelect = $("#i_coloniaSelect");
     const i_coloniaHidden = $("#i_colonia");
