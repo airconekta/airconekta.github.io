@@ -557,6 +557,29 @@
       font-size: 1.2rem;
     }
 
+    /* CTA block */
+    .cta{
+      margin-top:14px;
+      border:1px solid rgba(24,198,255,.45);
+      border-radius: 22px;
+      padding:14px;
+      background: linear-gradient(135deg, rgba(36,107,255,.10), rgba(24,198,255,.08));
+      box-shadow: 0 14px 40px rgba(16,48,96,.10);
+      backdrop-filter: blur(14px) saturate(140%);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    :root[data-theme="dark"] .cta{
+      background: linear-gradient(135deg, rgba(36,107,255,.16), rgba(24,198,255,.10));
+      border-color: rgba(24,198,255,.22);
+    }
+    .cta .txt{ max-width: 620px; }
+    .cta h3{ margin:0 0 6px; font-size:1.05rem; letter-spacing:.2px; }
+    .cta p{ margin:0; color:var(--muted); font-weight:800; }
+
     .toast{
       position:fixed;
       left:50%;
@@ -740,6 +763,15 @@
         <span class="pill">📍 Empresa local · Atención directa</span>
       </div>
 
+      <!-- CTA a contratación -->
+      <div class="cta" aria-label="Contratación">
+        <div class="txt">
+          <h3>📲 Solicita tu instalación aquí</h3>
+          <p>Si prefieres llenar tu solicitud desde el sitio de contratación, abre este enlace.</p>
+        </div>
+        <a class="btn btn-primary" href="https://contrata.airconekta.com/" target="_blank" rel="noopener noreferrer">🚀 Ir a contrata.airconekta.com</a>
+      </div>
+
       <div class="option-cards" style="margin-top:14px">
         <button class="opt" type="button" data-go="instalacion" aria-label="Ir a Instalación">
           <p class="title">🛠️ Instalación</p>
@@ -760,18 +792,18 @@
       <!-- ===== INFO COMERCIAL ===== -->
       <div class="info" aria-label="Puntos clave Airconekta">
         <div class="headline">
-          <div class="badge">💸 Refiere y gana $100</div>
-          <div class="status">Por cada amigo que recomiendes y contrate</div>
+          <div class="badge">💰 $100 de saldo a favor</div>
+          <div class="status">Por cada amigo que recomiendes y contrate 🚀</div>
         </div>
 
         <div class="mini-note">
-          🌐 <strong>AIRCONEKTA</strong> — Internet para tu hogar.
-          <strong>Empresa 100% local</strong>, atención directa y <strong>sin letras chiquitas</strong>.
+          🌐 <strong>AIRCONEKTA</strong> – Internet local para tu hogar.<br>
+          📍 <strong>Empresa 100% local</strong>, atención directa, <strong>sin letras chiquitas</strong> ni sorpresas.
         </div>
 
         <div class="divider"></div>
 
-        <h2 style="margin:0 0 8px">📶 Planes y precios (claros y sin sorpresas)</h2>
+        <h2 style="margin:0 0 8px">📶 Planes inalámbricos (claros y sin aumentos)</h2>
         <div class="plans">
           <div class="plan">
             <p class="pname">Hasta 15 Mb</p>
@@ -799,9 +831,38 @@
           <div class="k"><strong>✅ Primer mes GRATIS</strong><span class="status">Empieza a usar el servicio desde el primer día.</span></div>
           <div class="k"><strong>✅ SIN contratos forzosos</strong><span class="status">Te quedas porque te gusta el servicio.</span></div>
           <div class="k"><strong>✅ SIN aumentos inesperados</strong><span class="status">Pagas siempre lo mismo, sin sorpresas.</span></div>
-          <div class="k"><strong>✅ Consumo ILIMITADO</strong><span class="status">Disfruta sin preocuparte por “topes”.</span></div>
+          <div class="k"><strong>✅ Internet ILIMITADO</strong><span class="status">Disfruta sin preocuparte por “topes”.</span></div>
           <div class="k"><strong>✅ Soporte técnico local</strong><span class="status">Rápido, confiable y de frente.</span></div>
-          <div class="k"><strong>🔧 Instalación: $999 MXN</strong><span class="status">Pago único (una sola vez).</span></div>
+          <div class="k"><strong>💵 Costo único de instalación: $999 MXN</strong><span class="status">Pago una sola vez.</span></div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- ===== FIBRA ÓPTICA (ZONAS ESPECIALES) ===== -->
+        <h2 style="margin:0 0 8px">🚀 Servicio por FIBRA ÓPTICA</h2>
+
+        <div class="mini-note">
+          📍 <strong>Especial San Vicente del Mar</strong><br>
+          📍 <strong>Especial Villas Miramar</strong>
+        </div>
+
+        <div class="kpoints">
+          <div class="k">
+            <strong>🔧 Instalación especial</strong>
+            <span class="status"><strong>Solo $450 MXN</strong> (pago único)</span>
+          </div>
+          <div class="k">
+            <strong>⚡ Plan fibra 50 Mb</strong>
+            <span class="status"><strong>$350 MXN</strong></span>
+          </div>
+          <div class="k">
+            <strong>🔥 Plan fibra 70 Mb</strong>
+            <span class="status"><strong>$450 MXN</strong></span>
+          </div>
+          <div class="k">
+            <strong>✅ Beneficios</strong>
+            <span class="status">Misma atención local · Sin letras chiquitas</span>
+          </div>
         </div>
 
         <div class="divider"></div>
