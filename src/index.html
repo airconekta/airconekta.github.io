@@ -28,39 +28,60 @@
 
   <style>
     :root{
-      --bg:#f6f8ff;
-      --card:rgba(255,255,255,.78);
+      --bg:#f7f9ff;
+      --card:rgba(255,255,255,.84);
       --card-solid:#ffffff;
-      --ink:#0f1a2e;
-      --muted:#5b6b86;
-      --accent:#246bff;
-      --accent-2:#18c6ff;
-      --accent-3:#7c3aed;
-      --border:rgba(207,224,255,.85);
-      --border-2:rgba(255,255,255,.55);
+
+      /* Texto con más contraste en claro */
+      --ink:#0b1426;
+      --muted:#475a7a;
+
+      /* Acentos (mismo estilo, un poco más “profundos” para que no quemen) */
+      --accent:#1f5cff;
+      --accent-2:#14bdf2;
+      --accent-3:#6d28d9;
+
+      --border:rgba(198,216,255,.92);
+      --border-2:rgba(255,255,255,.65);
+
       --ok:#16a34a;
       --warn:#b45309;
+
       --radius:18px;
       --radius-2:22px;
+
       --shadow:0 14px 40px rgba(16,48,96,.12);
       --shadow-2:0 18px 60px rgba(16,48,96,.16);
-      --ring:0 0 0 4px rgba(36,107,255,.16);
+
+      /* Ring más visible en claro */
+      --ring:0 0 0 4px rgba(31,92,255,.18);
+
       --maxw:1040px;
       --logo-1024:url("https://raw.githubusercontent.com/airconekta/airconekta/refs/heads/main/airconekta_logo_1024.png");
       --logo-512:url("https://raw.githubusercontent.com/airconekta/airconekta/refs/heads/main/airconekta_logo_512.png");
       --logo-trans:url("https://raw.githubusercontent.com/airconekta/airconekta/refs/heads/main/airconekta_logo_transparent.png");
     }
     :root[data-theme="dark"]{
-      --bg:#070b14;
-      --card:rgba(12,18,34,.72);
+      --bg:#060812;
+      --card:rgba(10,14,28,.78);
       --card-solid:#0b1220;
-      --ink:#e9eefc;
-      --muted:#a9b6d6;
-      --border:rgba(60,86,140,.35);
-      --border-2:rgba(255,255,255,.08);
-      --shadow:0 18px 60px rgba(0,0,0,.45);
-      --shadow-2:0 28px 90px rgba(0,0,0,.55);
-      --ring:0 0 0 4px rgba(24,198,255,.18);
+
+      /* Texto más legible en oscuro */
+      --ink:#f1f6ff;
+      --muted:#b7c5e6;
+
+      /* Acentos un poco más “neón controlado” en dark */
+      --accent:#3b73ff;
+      --accent-2:#22d3ff;
+      --accent-3:#8b5cf6;
+
+      --border:rgba(88,118,188,.38);
+      --border-2:rgba(255,255,255,.10);
+
+      --shadow:0 18px 60px rgba(0,0,0,.50);
+      --shadow-2:0 28px 90px rgba(0,0,0,.60);
+
+      --ring:0 0 0 4px rgba(34,211,255,.20);
     }
 
     *{box-sizing:border-box}
