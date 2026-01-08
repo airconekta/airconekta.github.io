@@ -440,7 +440,7 @@
       display:grid;
       grid-template-columns:repeat(3, 1fr);
       gap:12px;
-      margin-top:10px;
+      margin-top:14px;
     }
     @media (max-width:860px){
       .option-cards{ grid-template-columns:1fr; }
@@ -449,7 +449,7 @@
     .opt{
       border:1px solid var(--border);
       border-radius: 20px;
-      padding:14px;
+      padding:16px;
       background: rgba(255,255,255,.55);
       box-shadow: 0 12px 30px rgba(16,48,96,.08);
       cursor:pointer;
@@ -465,8 +465,8 @@
     }
     .opt:active{ transform: translateY(0px); }
     .opt:focus-visible{ outline:none; box-shadow: var(--ring); }
-    .opt .title{ font-weight: 1000; font-size:1.05rem; margin:0; }
-    .opt .desc{ margin:6px 0 0; color:var(--muted); font-size:.95rem; }
+    .opt .title{ font-weight: 1000; font-size:1.08rem; margin:0; }
+    .opt .desc{ margin:8px 0 0; color:var(--muted); font-size:.96rem; }
 
     .info{
       margin-top:14px;
@@ -740,39 +740,21 @@
         <span class="pill">📍 Empresa local · Atención directa</span>
       </div>
 
-      <!-- 3 cuadros principales -->
-      <div class="option-cards" style="margin-top:14px">
-        <button class="opt" type="button" data-go="instalacion" aria-label="Ir a Instalación">
-          <p class="title">🛠️ Instalación</p>
-          <p class="desc">Solicita instalación nueva y envía tus datos por WhatsApp.</p>
+      <!-- SOLO 3 botones (unificados) -->
+      <div class="option-cards" aria-label="Opciones principales">
+        <button class="opt" type="button" data-go="instalacion" aria-label="Presiona aquí para instalar">
+          <p class="title">🛠️ Presiona aquí para instalar</p>
+          <p class="desc">Contrata tu servicio. Llena tus datos y envíalos por WhatsApp (listo para copiar/pegar).</p>
         </button>
 
-        <button class="opt" type="button" data-go="cambio" aria-label="Ir a Cambio de domicilio">
-          <p class="title">🏠 Cambio de Domicilio</p>
-          <p class="desc">Cambia tu servicio a un nuevo domicilio con fecha y hora.</p>
+        <button class="opt" type="button" data-go="cambio" aria-label="Presiona aquí para cambio de domicilio">
+          <p class="title">🏠 Presiona aquí para cambio de domicilio</p>
+          <p class="desc">Mueve tu servicio a otra dirección indicando fecha y hora en la que te podemos recibir.</p>
         </button>
 
-        <button class="opt" type="button" data-go="cancelacion" aria-label="Ir a Cancelación">
-          <p class="title">🧾 Cancelación</p>
-          <p class="desc">Solicita cancelación y agenda la visita de retiro.</p>
-        </button>
-      </div>
-
-      <!-- 3 cuadros inferiores (funcionales) -->
-      <div class="option-cards" style="margin-top:12px">
-        <button class="opt" type="button" data-go="instalacion" aria-label="Abrir Instalación">
-          <p class="title">Instalación</p>
-          <p class="desc">Formulario de contratación / instalación.</p>
-        </button>
-
-        <button class="opt" type="button" data-go="cambio" aria-label="Abrir Cambio de domicilio">
-          <p class="title">Cambio de domicilio</p>
-          <p class="desc">Mover tu servicio a otra dirección.</p>
-        </button>
-
-        <button class="opt" type="button" data-go="cancelacion" aria-label="Abrir Cancelación">
-          <p class="title">Cancelación</p>
-          <p class="desc">Solicitar baja y agendar retiro.</p>
+        <button class="opt" type="button" data-go="cancelacion" aria-label="Presiona aquí para cancelaciones">
+          <p class="title">🧾 Presiona aquí para cancelaciones</p>
+          <p class="desc">Solicita la baja y agenda la visita de retiro con fecha y hora.</p>
         </button>
       </div>
 
@@ -921,29 +903,27 @@
           <h1>Solicitar instalación</h1>
           <p class="lead">
             Completa tus datos. La colonia es <strong>opcional</strong>.
-            Si eliges una colonia de <strong>fibra</strong>, se mostrarán automáticamente los <strong>planes de fibra</strong>.
+            Al seleccionar una colonia se mostrarán automáticamente los <strong>planes correctos</strong> (WiFi o Fibra).
           </p>
         </div>
         <button class="btn btn-ghost" type="button" data-back>← Volver</button>
       </div>
 
-      <!-- Aviso dinámico: WiFi vs Fibra -->
-      <div class="info" id="tipoServicioBox" aria-label="Tipo de servicio">
+      <!-- Aviso dinámico (OCULTO hasta seleccionar colonia) -->
+      <div class="info" id="tipoServicioBox" aria-label="Tipo de servicio" style="display:none">
         <div class="headline">
           <div class="badge" id="tipoBadge">📶 WiFi</div>
           <div class="status" id="tipoStatus">Mostrando planes inalámbricos</div>
         </div>
 
-        <!-- SOLO WIFI -->
         <div class="kpoints" id="wifiBox">
           <div class="k"><strong>📶 Planes WiFi</strong><span class="status">15 Mb $300 · 20 Mb $400 · 25 Mb $600</span></div>
-          <div class="k"><strong>💵 Instalación WiFi</strong><span class="status">$999 MXN (pago único)</span></div>
+          <div class="k"><strong>🔧 Instalación WiFi</strong><span class="status">$999 MXN (pago único)</span></div>
         </div>
 
-        <!-- SOLO FIBRA (oculto hasta seleccionar colonia fibra) -->
         <div class="kpoints" id="fibraBox" style="display:none">
           <div class="k"><strong>🚀 Planes Fibra</strong><span class="status">50 Mb $350 · 70 Mb $450</span></div>
-          <div class="k"><strong>🔧 Instalación fibra</strong><span class="status">Especial $450 MXN (pago único)</span></div>
+          <div class="k"><strong>🔧 Instalación Fibra</strong><span class="status">Especial $450 MXN (pago único)</span></div>
         </div>
       </div>
 
@@ -1022,9 +1002,7 @@
 
         <div class="col-6">
           <label for="i_plan">Plan deseado</label>
-          <select id="i_plan" name="plan" required>
-            <!-- Se llena dinámicamente por JS según colonia (WiFi/Fibra) -->
-          </select>
+          <select id="i_plan" name="plan" required></select>
           <div class="status" id="i_planHint" style="margin-top:6px">Selecciona tu plan</div>
         </div>
 
@@ -1293,7 +1271,6 @@
       const view = document.querySelector(`[data-view="${name}"]`);
       if (view) view.classList.add("active");
 
-      // guarda última vista "normal" (no guardamos whoami como default)
       if (name !== "whoami") sessionStorage.setItem(VIEW_KEY, name);
 
       try {
@@ -1304,7 +1281,6 @@
     }
 
     $("#menuBtn").addEventListener("click", () => {
-      // al volver al menú, limpiamos hash si venimos de whoami
       if (location.hash) history.replaceState(null, "", location.pathname + location.search);
       showView("home");
       toast("Opciones listas ✅");
@@ -1370,13 +1346,11 @@
 
     function handleHashRoute(){
       const h = (location.hash || "").toLowerCase().trim();
-
       if (h === "#whoami"){
         renderWhoami();
         showView("whoami");
         return;
       }
-
       const last = sessionStorage.getItem(VIEW_KEY) || "home";
       showView(last);
     }
@@ -1396,9 +1370,7 @@
             text: "Instalación, Cambio de domicilio y Cancelación (WhatsApp listo)",
             url: location.href,
           });
-        } catch {
-          /* cancelado */
-        }
+        } catch {}
       } else {
         try {
           await navigator.clipboard?.writeText(location.href);
@@ -1411,12 +1383,14 @@
 
     // =====================
     // INSTALACIÓN: colonia -> solo WiFi o solo Fibra
+    // + el cuadro se muestra SOLO cuando hay colonia seleccionada
     // =====================
     const i_coloniaSelect = $("#i_coloniaSelect");
     const i_coloniaHidden = $("#i_colonia");
     const i_coloniaStatus = $("#i_coloniaStatus");
 
     const i_tipoHidden = $("#i_tipo");
+    const tipoServicioBox = $("#tipoServicioBox");
     const tipoBadge = $("#tipoBadge");
     const tipoStatus = $("#tipoStatus");
     const wifiBox = $("#wifiBox");
@@ -1425,7 +1399,6 @@
     const i_planHint = $("#i_planHint");
 
     function setPlanOptions(tipo){
-      // limpia
       i_plan.innerHTML = "";
 
       const placeholder = document.createElement("option");
@@ -1444,8 +1417,7 @@
         o2.textContent = "Fibra 70 Mb — $450 MXN";
         i_plan.appendChild(o1);
         i_plan.appendChild(o2);
-
-        i_planHint.textContent = "Planes de fibra (solo zonas especiales)";
+        i_planHint.textContent = "Planes de fibra (zona especial)";
       } else {
         const o1 = document.createElement("option");
         o1.value = "Plan 300 — 15 Mbps";
@@ -1459,7 +1431,6 @@
         i_plan.appendChild(o1);
         i_plan.appendChild(o2);
         i_plan.appendChild(o3);
-
         i_planHint.textContent = "Planes inalámbricos (WiFi)";
       }
     }
@@ -1482,17 +1453,27 @@
     }
 
     function setInstalacionColonia(val) {
-      i_coloniaHidden.value = val || "";
-      i_coloniaStatus.textContent = val ? `Colonia: ${val}` : "Sin colonia seleccionada";
+      const v = (val || "").trim();
+      i_coloniaHidden.value = v;
+      i_coloniaStatus.textContent = v ? `Colonia: ${v}` : "Sin colonia seleccionada";
 
-      // si es colonia fibra -> solo fibra, si no -> solo wifi
-      applyTipoServicio(isFibraColonia(val) ? "fibra" : "wifi");
+      // mostrar / ocultar el cuadro
+      if (!v){
+        tipoServicioBox.style.display = "none";
+        // por seguridad: reset a wifi y planes wifi (pero oculto)
+        applyTipoServicio("wifi");
+        return;
+      }
+
+      // si hay colonia, se muestra y decide tipo
+      tipoServicioBox.style.display = "block";
+      applyTipoServicio(isFibraColonia(v) ? "fibra" : "wifi");
     }
 
     i_coloniaSelect.addEventListener("change", () => setInstalacionColonia(i_coloniaSelect.value));
 
-    // Inicial: por defecto WiFi
-    applyTipoServicio("wifi");
+    // Inicial: cuadro oculto y planes wifi precargados
+    setPlanOptions("wifi");
 
     // =====================
     // INSTALACIÓN: geolocalización + envío
@@ -1579,7 +1560,6 @@
       msg += `*Correo:* ${correo}\n`;
       msg += `*Método de contacto:* ${metodo}\n`;
 
-      // Nota costos según tipo
       if (tipo === "fibra"){
         msg += `*Instalación:* $450 MXN (especial)\n`;
       } else {
