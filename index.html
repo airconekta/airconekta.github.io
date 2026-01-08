@@ -321,6 +321,7 @@
     }
     h1{ font-size:1.6rem; margin:0 0 6px; letter-spacing:.2px; }
     h2{ font-size:1.15rem; margin:0 0 10px; }
+    h3{ font-size:1.05rem; margin:0 0 6px; letter-spacing:.15px; }
     .lead{ color:var(--muted); margin:0 0 14px; }
 
     /* ========================= Buttons ========================= */
@@ -468,6 +469,31 @@
     .opt .title{ font-weight: 1000; font-size:1.05rem; margin:0; }
     .opt .desc{ margin:6px 0 0; color:var(--muted); font-size:.95rem; }
 
+    /* inline titles under cards */
+    .opt-sub{
+      margin-top:8px;
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:12px;
+    }
+    @media (max-width:860px){
+      .opt-sub{ grid-template-columns:1fr; }
+    }
+    .opt-sub .t{
+      border:1px dashed rgba(207,224,255,.75);
+      border-radius: 18px;
+      padding:10px 12px;
+      background: rgba(247,251,255,.55);
+      color:var(--muted);
+      font-weight: 900;
+      text-align:center;
+      backdrop-filter: blur(14px) saturate(140%);
+    }
+    :root[data-theme="dark"] .opt-sub .t{
+      background: rgba(255,255,255,.04);
+      border-color: rgba(60,86,140,.35);
+    }
+
     .info{
       margin-top:14px;
       border:1px solid var(--border);
@@ -557,7 +583,7 @@
       font-size: 1.2rem;
     }
 
-    /* CTA block */
+    /* CTA block (sin botón) */
     .cta{
       margin-top:14px;
       border:1px solid rgba(24,198,255,.45);
@@ -576,9 +602,13 @@
       background: linear-gradient(135deg, rgba(36,107,255,.16), rgba(24,198,255,.10));
       border-color: rgba(24,198,255,.22);
     }
-    .cta .txt{ max-width: 620px; }
-    .cta h3{ margin:0 0 6px; font-size:1.05rem; letter-spacing:.2px; }
-    .cta p{ margin:0; color:var(--muted); font-weight:800; }
+    .cta .txt{ max-width: 720px; }
+    .cta a{
+      font-weight: 1000;
+      text-decoration: none;
+      border-bottom: 2px dotted rgba(36,107,255,.45);
+    }
+    .cta a:hover{ border-bottom-color: rgba(36,107,255,.85); }
 
     .toast{
       position:fixed;
@@ -641,6 +671,71 @@
     :root[data-theme="dark"] .mini-note{
       background: rgba(255,255,255,.04);
       border-color: rgba(60,86,140,.35);
+    }
+
+    /* Fibra hint (solo si colonia especial) */
+    .fibraBox{
+      display:none;
+      margin-top:12px;
+      border:1px solid rgba(24,198,255,.45);
+      border-radius: 20px;
+      padding:12px;
+      background: linear-gradient(135deg, rgba(36,107,255,.10), rgba(24,198,255,.06));
+      backdrop-filter: blur(14px) saturate(140%);
+    }
+    :root[data-theme="dark"] .fibraBox{
+      border-color: rgba(24,198,255,.22);
+      background: linear-gradient(135deg, rgba(36,107,255,.16), rgba(24,198,255,.08));
+    }
+    .fibraBox .row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .fibraBox .pill2{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:.9rem;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(24,198,255,.25);
+      background: rgba(24,198,255,.08);
+      color:var(--muted);
+      font-weight: 900;
+    }
+    :root[data-theme="dark"] .fibraBox .pill2{
+      border-color: rgba(24,198,255,.18);
+      background: rgba(24,198,255,.10);
+    }
+    .fibraBox .plans2{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:10px;
+      margin-top:10px;
+    }
+    @media (max-width:860px){ .fibraBox .plans2{ grid-template-columns:1fr; } }
+    .fibraPlan{
+      border:1px solid rgba(207,224,255,.55);
+      border-radius: 18px;
+      padding:12px;
+      background: rgba(255,255,255,.45);
+      backdrop-filter: blur(14px) saturate(140%);
+    }
+    :root[data-theme="dark"] .fibraPlan{
+      border-color: rgba(60,86,140,.35);
+      background: rgba(255,255,255,.04);
+    }
+    .fibraPlan .price{
+      margin-top:8px;
+      font-weight: 1000;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color: transparent;
+      font-size: 1.2rem;
     }
 
     .sr-only{
@@ -763,13 +858,15 @@
         <span class="pill">📍 Empresa local · Atención directa</span>
       </div>
 
-      <!-- CTA a contratación -->
+      <!-- CTA a contratación (SIN botón) -->
       <div class="cta" aria-label="Contratación">
         <div class="txt">
           <h3>📲 Solicita tu instalación aquí</h3>
-          <p>Si prefieres llenar tu solicitud desde el sitio de contratación, abre este enlace.</p>
+          <p>
+            Enlace directo:
+            <a href="https://contrata.airconekta.com/" target="_blank" rel="noopener noreferrer">https://contrata.airconekta.com/</a>
+          </p>
         </div>
-        <a class="btn btn-primary" href="https://contrata.airconekta.com/" target="_blank" rel="noopener noreferrer">🚀 Ir a contrata.airconekta.com</a>
       </div>
 
       <div class="option-cards" style="margin-top:14px">
@@ -787,6 +884,13 @@
           <p class="title">🧾 Cancelación</p>
           <p class="desc">Solicita cancelación y agenda la visita de retiro.</p>
         </button>
+      </div>
+
+      <!-- títulos extra debajo (lo que pediste) -->
+      <div class="opt-sub" aria-label="Títulos de funciones">
+        <div class="t">Instalación</div>
+        <div class="t">Cambio de domicilio</div>
+        <div class="t">Cancelación</div>
       </div>
 
       <!-- ===== INFO COMERCIAL ===== -->
@@ -992,6 +1096,34 @@
             <option>⚒️ San Vicente del Mar, NAY</option>
           </select>
           <div class="status" id="i_coloniaStatus" style="margin-top:6px">Sin colonia seleccionada</div>
+
+          <!-- FIBRA: aparece SOLO si colonia es Villas Miramar o San Vicente del Mar -->
+          <div class="fibraBox" id="fibraBox" aria-label="Planes de fibra (zona especial)">
+            <div class="row">
+              <div>
+                <strong>🚀 Zona especial con FIBRA ÓPTICA</strong>
+                <div class="status" id="fibraZoneText" style="margin-top:2px">—</div>
+              </div>
+              <span class="pill2">🔧 Instalación especial: $450 MXN</span>
+            </div>
+
+            <div class="plans2">
+              <div class="fibraPlan">
+                <div style="font-weight:1000">⚡ Fibra 50 Mb</div>
+                <div class="status">Servicio por fibra óptica</div>
+                <div class="price">$350 MXN</div>
+              </div>
+              <div class="fibraPlan">
+                <div style="font-weight:1000">🔥 Fibra 70 Mb</div>
+                <div class="status">Servicio por fibra óptica</div>
+                <div class="price">$450 MXN</div>
+              </div>
+            </div>
+
+            <div class="status" style="margin-top:10px;font-weight:900">
+              Tip: selecciona tu plan deseado abajo (inalámbrico o fibra).
+            </div>
+          </div>
         </div>
 
         <div class="col-6">
@@ -1037,10 +1169,17 @@
           <label for="i_plan">Plan deseado</label>
           <select id="i_plan" name="plan" required>
             <option value="" disabled selected>Selecciona un plan</option>
-            <option value="Plan 300 — 15 Mbps">Plan 300 — 15 Mbps</option>
-            <option value="Plan 400 — 20 Mbps">Plan 400 — 20 Mbps</option>
-            <option value="Plan 600 — 25 Mbps">Plan 600 — 25 Mbps</option>
+
+            <!-- Inalámbricos -->
+            <option value="Plan 300 — 15 Mbps (Inalámbrico)">Plan 300 — 15 Mbps (Inalámbrico)</option>
+            <option value="Plan 400 — 20 Mbps (Inalámbrico)">Plan 400 — 20 Mbps (Inalámbrico)</option>
+            <option value="Plan 600 — 25 Mbps (Inalámbrico)">Plan 600 — 25 Mbps (Inalámbrico)</option>
+
+            <!-- Fibra (solo se habilitan si colonia especial) -->
+            <option value="Fibra 350 — 50 Mbps (Fibra Óptica)" data-fibra-option>Fibra 350 — 50 Mbps (Fibra Óptica)</option>
+            <option value="Fibra 450 — 70 Mbps (Fibra Óptica)" data-fibra-option>Fibra 450 — 70 Mbps (Fibra Óptica)</option>
           </select>
+          <div class="status" id="i_planHint" style="margin-top:6px">Selecciona un plan</div>
         </div>
 
         <div class="col-6">
@@ -1313,7 +1452,6 @@
     }
 
     $("#menuBtn").addEventListener("click", () => {
-      // al volver al menú, limpiamos hash si venimos de whoami
       if (location.hash) history.replaceState(null, "", location.pathname + location.search);
       showView("home");
       toast("Opciones listas ✅");
@@ -1322,7 +1460,6 @@
     $$("[data-go]").forEach((btn) => {
       btn.addEventListener("click", () => {
         const v = btn.getAttribute("data-go");
-        // limpiamos hash al entrar a formularios
         if (location.hash) history.replaceState(null, "", location.pathname + location.search);
         showView(v);
 
@@ -1387,7 +1524,6 @@
         return;
       }
 
-      // si no es whoami, vuelve a última vista guardada
       const last = sessionStorage.getItem(VIEW_KEY) || "home";
       showView(last);
     }
@@ -1421,18 +1557,53 @@
     });
 
     // =====================
-    // INSTALACIÓN: colonia + geolocalización + envío
+    // INSTALACIÓN: colonia + fibra UI + geolocalización + envío
     // =====================
     const i_coloniaSelect = $("#i_coloniaSelect");
     const i_coloniaHidden = $("#i_colonia");
     const i_coloniaStatus = $("#i_coloniaStatus");
 
+    const fibraBox = $("#fibraBox");
+    const fibraZoneText = $("#fibraZoneText");
+    const planHint = $("#i_planHint");
+
+    const isSpecialFibra = (val) => {
+      const v = (val || "").toLowerCase();
+      return v.includes("villas miramar") || v.includes("san vicente del mar");
+    };
+
+    function setFibraOptionsEnabled(enabled){
+      // habilita/deshabilita opciones de fibra dentro del select de plan
+      document.querySelectorAll("[data-fibra-option]").forEach((opt) => {
+        opt.disabled = !enabled;
+      });
+
+      // si NO está habilitado y el usuario tenía fibra seleccionada, lo regresamos al primer plan inalámbrico
+      const planSel = $("#i_plan");
+      const current = planSel.value || "";
+      if (!enabled && current.toLowerCase().includes("fibra")) {
+        planSel.value = "Plan 300 — 15 Mbps (Inalámbrico)";
+      }
+
+      planHint.textContent = enabled
+        ? "Zona especial detectada: también puedes elegir plan de fibra ✅"
+        : "Selecciona un plan (fibra solo en zonas especiales)";
+    }
+
     function setInstalacionColonia(val) {
       i_coloniaHidden.value = val || "";
       i_coloniaStatus.textContent = val ? `Colonia: ${val}` : "Sin colonia seleccionada";
+
+      const special = isSpecialFibra(val);
+      fibraBox.style.display = special ? "block" : "none";
+      if (special) fibraZoneText.textContent = `📍 ${val}`;
+      setFibraOptionsEnabled(special);
     }
 
     i_coloniaSelect.addEventListener("change", () => setInstalacionColonia(i_coloniaSelect.value));
+
+    // por default fibra deshabilitada hasta que elija colonia especial
+    setFibraOptionsEnabled(false);
 
     $("#i_geoBtn").addEventListener("click", () => {
       const s = $("#i_geoStatus");
@@ -1505,6 +1676,13 @@
       const lat = $("#i_lat").value;
       const lng = $("#i_lng").value;
 
+      // si eligió plan fibra pero colonia no es especial, bloquea
+      if (plan.toLowerCase().includes("fibra") && !isSpecialFibra(colonia)) {
+        toast("Los planes de fibra solo aplican en Villas Miramar o San Vicente del Mar");
+        $("#i_coloniaSelect").focus();
+        return;
+      }
+
       let msg = "Hola 👋\nMe gustaría hablar sobre la contratación de servicio.\n\n";
       msg += "*Tipo de solicitud:* Instalación\n";
       msg += `*Nombre:* ${nombre}\n`;
@@ -1513,6 +1691,9 @@
       msg += `*Teléfono:* ${tel}\n`;
       msg += `*Correo:* ${correo}\n`;
       msg += `*Método de contacto:* ${metodo}\n`;
+      if (plan.toLowerCase().includes("fibra")) {
+        msg += `*Nota:* Zona especial con FIBRA ÓPTICA · Instalación especial $450 MXN\n`;
+      }
       if (lat && lng) msg += `*Ubicación:* https://www.google.com/maps?q=${lat},${lng}\n`;
 
       abrirWhatsApp(msg);
@@ -1678,12 +1859,9 @@
 
     // =====================
     // Vista inicial
-    // - si viene con #whoami, entra directo
-    // - si no, abre última vista guardada
     // =====================
     (function initView(){
-      // si no hay last aún, set default
-      if (!sessionStorage.getItem(VIEW_KEY)) sessionStorage.setItem(VIEW_KEY, "home");
+      if (!sessionStorage.getItem("airconekta_last_view")) sessionStorage.setItem("airconekta_last_view", "home");
       handleHashRoute();
     })();
   </script>
