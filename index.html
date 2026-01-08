@@ -321,7 +321,6 @@
     }
     h1{ font-size:1.6rem; margin:0 0 6px; letter-spacing:.2px; }
     h2{ font-size:1.15rem; margin:0 0 10px; }
-    h3{ font-size:1.05rem; margin:0 0 6px; letter-spacing:.15px; }
     .lead{ color:var(--muted); margin:0 0 14px; }
 
     /* ========================= Buttons ========================= */
@@ -469,31 +468,6 @@
     .opt .title{ font-weight: 1000; font-size:1.05rem; margin:0; }
     .opt .desc{ margin:6px 0 0; color:var(--muted); font-size:.95rem; }
 
-    /* inline titles under cards */
-    .opt-sub{
-      margin-top:8px;
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:12px;
-    }
-    @media (max-width:860px){
-      .opt-sub{ grid-template-columns:1fr; }
-    }
-    .opt-sub .t{
-      border:1px dashed rgba(207,224,255,.75);
-      border-radius: 18px;
-      padding:10px 12px;
-      background: rgba(247,251,255,.55);
-      color:var(--muted);
-      font-weight: 900;
-      text-align:center;
-      backdrop-filter: blur(14px) saturate(140%);
-    }
-    :root[data-theme="dark"] .opt-sub .t{
-      background: rgba(255,255,255,.04);
-      border-color: rgba(60,86,140,.35);
-    }
-
     .info{
       margin-top:14px;
       border:1px solid var(--border);
@@ -583,33 +557,6 @@
       font-size: 1.2rem;
     }
 
-    /* CTA block (sin botón) */
-    .cta{
-      margin-top:14px;
-      border:1px solid rgba(24,198,255,.45);
-      border-radius: 22px;
-      padding:14px;
-      background: linear-gradient(135deg, rgba(36,107,255,.10), rgba(24,198,255,.08));
-      box-shadow: 0 14px 40px rgba(16,48,96,.10);
-      backdrop-filter: blur(14px) saturate(140%);
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      flex-wrap:wrap;
-    }
-    :root[data-theme="dark"] .cta{
-      background: linear-gradient(135deg, rgba(36,107,255,.16), rgba(24,198,255,.10));
-      border-color: rgba(24,198,255,.22);
-    }
-    .cta .txt{ max-width: 720px; }
-    .cta a{
-      font-weight: 1000;
-      text-decoration: none;
-      border-bottom: 2px dotted rgba(36,107,255,.45);
-    }
-    .cta a:hover{ border-bottom-color: rgba(36,107,255,.85); }
-
     .toast{
       position:fixed;
       left:50%;
@@ -671,71 +618,6 @@
     :root[data-theme="dark"] .mini-note{
       background: rgba(255,255,255,.04);
       border-color: rgba(60,86,140,.35);
-    }
-
-    /* Fibra hint (solo si colonia especial) */
-    .fibraBox{
-      display:none;
-      margin-top:12px;
-      border:1px solid rgba(24,198,255,.45);
-      border-radius: 20px;
-      padding:12px;
-      background: linear-gradient(135deg, rgba(36,107,255,.10), rgba(24,198,255,.06));
-      backdrop-filter: blur(14px) saturate(140%);
-    }
-    :root[data-theme="dark"] .fibraBox{
-      border-color: rgba(24,198,255,.22);
-      background: linear-gradient(135deg, rgba(36,107,255,.16), rgba(24,198,255,.08));
-    }
-    .fibraBox .row{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-    .fibraBox .pill2{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      font-size:.9rem;
-      padding:8px 10px;
-      border-radius:999px;
-      border:1px solid rgba(24,198,255,.25);
-      background: rgba(24,198,255,.08);
-      color:var(--muted);
-      font-weight: 900;
-    }
-    :root[data-theme="dark"] .fibraBox .pill2{
-      border-color: rgba(24,198,255,.18);
-      background: rgba(24,198,255,.10);
-    }
-    .fibraBox .plans2{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:10px;
-      margin-top:10px;
-    }
-    @media (max-width:860px){ .fibraBox .plans2{ grid-template-columns:1fr; } }
-    .fibraPlan{
-      border:1px solid rgba(207,224,255,.55);
-      border-radius: 18px;
-      padding:12px;
-      background: rgba(255,255,255,.45);
-      backdrop-filter: blur(14px) saturate(140%);
-    }
-    :root[data-theme="dark"] .fibraPlan{
-      border-color: rgba(60,86,140,.35);
-      background: rgba(255,255,255,.04);
-    }
-    .fibraPlan .price{
-      margin-top:8px;
-      font-weight: 1000;
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      -webkit-background-clip:text;
-      background-clip:text;
-      color: transparent;
-      font-size: 1.2rem;
     }
 
     .sr-only{
@@ -858,17 +740,7 @@
         <span class="pill">📍 Empresa local · Atención directa</span>
       </div>
 
-      <!-- CTA a contratación (SIN botón) -->
-      <div class="cta" aria-label="Contratación">
-        <div class="txt">
-          <h3>📲 Solicita tu instalación aquí</h3>
-          <p>
-            Enlace directo:
-            <a href="https://contrata.airconekta.com/" target="_blank" rel="noopener noreferrer">https://contrata.airconekta.com/</a>
-          </p>
-        </div>
-      </div>
-
+      <!-- 3 cuadros principales -->
       <div class="option-cards" style="margin-top:14px">
         <button class="opt" type="button" data-go="instalacion" aria-label="Ir a Instalación">
           <p class="title">🛠️ Instalación</p>
@@ -886,14 +758,25 @@
         </button>
       </div>
 
-      <!-- títulos extra debajo (lo que pediste) -->
-      <div class="opt-sub" aria-label="Títulos de funciones">
-        <div class="t">Instalación</div>
-        <div class="t">Cambio de domicilio</div>
-        <div class="t">Cancelación</div>
+      <!-- 3 cuadros inferiores (funcionales) -->
+      <div class="option-cards" style="margin-top:12px">
+        <button class="opt" type="button" data-go="instalacion" aria-label="Abrir Instalación">
+          <p class="title">Instalación</p>
+          <p class="desc">Formulario de contratación / instalación.</p>
+        </button>
+
+        <button class="opt" type="button" data-go="cambio" aria-label="Abrir Cambio de domicilio">
+          <p class="title">Cambio de domicilio</p>
+          <p class="desc">Mover tu servicio a otra dirección.</p>
+        </button>
+
+        <button class="opt" type="button" data-go="cancelacion" aria-label="Abrir Cancelación">
+          <p class="title">Cancelación</p>
+          <p class="desc">Solicitar baja y agendar retiro.</p>
+        </button>
       </div>
 
-      <!-- ===== INFO COMERCIAL ===== -->
+      <!-- ===== INFO COMERCIAL (HOME SOLO WIFI) ===== -->
       <div class="info" aria-label="Puntos clave Airconekta">
         <div class="headline">
           <div class="badge">💰 $100 de saldo a favor</div>
@@ -942,37 +825,9 @@
 
         <div class="divider"></div>
 
-        <!-- ===== FIBRA ÓPTICA (ZONAS ESPECIALES) ===== -->
-        <h2 style="margin:0 0 8px">🚀 Servicio por FIBRA ÓPTICA</h2>
-
         <div class="mini-note">
-          📍 <strong>Especial San Vicente del Mar</strong><br>
-          📍 <strong>Especial Villas Miramar</strong>
-        </div>
-
-        <div class="kpoints">
-          <div class="k">
-            <strong>🔧 Instalación especial</strong>
-            <span class="status"><strong>Solo $450 MXN</strong> (pago único)</span>
-          </div>
-          <div class="k">
-            <strong>⚡ Plan fibra 50 Mb</strong>
-            <span class="status"><strong>$350 MXN</strong></span>
-          </div>
-          <div class="k">
-            <strong>🔥 Plan fibra 70 Mb</strong>
-            <span class="status"><strong>$450 MXN</strong></span>
-          </div>
-          <div class="k">
-            <strong>✅ Beneficios</strong>
-            <span class="status">Misma atención local · Sin letras chiquitas</span>
-          </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="mini-note">
-          🤝 <strong>Somos una empresa local, no call center ni franquicia:</strong> te atendemos directo, rápido y de frente.
+          🚀 <strong>Fibra óptica</strong> disponible en zonas especiales (se muestra al seleccionar colonia).<br>
+          📍 Especial: <strong>San Vicente del Mar</strong> · <strong>Villas Miramar</strong>
         </div>
       </div>
 
@@ -1065,65 +920,65 @@
         <div>
           <h1>Solicitar instalación</h1>
           <p class="lead">
-            Completa tus datos. La ubicación es <strong>opcional</strong>.
-            Al final se abrirá WhatsApp con tu información formateada.
+            Completa tus datos. La colonia es <strong>opcional</strong>.
+            Si eliges una colonia de <strong>fibra</strong>, se mostrarán automáticamente los <strong>planes de fibra</strong>.
           </p>
         </div>
         <button class="btn btn-ghost" type="button" data-back>← Volver</button>
       </div>
 
+      <!-- Aviso dinámico: WiFi vs Fibra -->
+      <div class="info" id="tipoServicioBox" aria-label="Tipo de servicio">
+        <div class="headline">
+          <div class="badge" id="tipoBadge">📶 WiFi</div>
+          <div class="status" id="tipoStatus">Mostrando planes inalámbricos</div>
+        </div>
+
+        <!-- SOLO WIFI -->
+        <div class="kpoints" id="wifiBox">
+          <div class="k"><strong>📶 Planes WiFi</strong><span class="status">15 Mb $300 · 20 Mb $400 · 25 Mb $600</span></div>
+          <div class="k"><strong>💵 Instalación WiFi</strong><span class="status">$999 MXN (pago único)</span></div>
+        </div>
+
+        <!-- SOLO FIBRA (oculto hasta seleccionar colonia fibra) -->
+        <div class="kpoints" id="fibraBox" style="display:none">
+          <div class="k"><strong>🚀 Planes Fibra</strong><span class="status">50 Mb $350 · 70 Mb $450</span></div>
+          <div class="k"><strong>🔧 Instalación fibra</strong><span class="status">Especial $450 MXN (pago único)</span></div>
+        </div>
+      </div>
+
       <form id="formInstalacion" class="grid" novalidate>
         <input type="hidden" id="i_colonia" name="colonia" />
+        <input type="hidden" id="i_tipo" name="tipo" value="wifi" />
 
         <div class="col-12">
           <label for="i_coloniaSelect">Colonia (opcional)</label>
           <select id="i_coloniaSelect" name="coloniaSelect">
             <option value="" selected>Selecciona una colonia…</option>
-            <option>⚒️ El Canton, JAL</option>
-            <option>⚒️ Fracc. Ex Haciendas San Angel, NAY</option>
-            <option>⚒️ Fracc. La Joya / Los Mangos, NAY</option>
-            <option>⚒️ Fracc. La Mision, NAY</option>
-            <option>⚒️ Fracc. Jardin De Las Arboledas, NAY</option>
-            <option>⚒️ Fracc. Los Anhelos, NAY</option>
-            <option>⚒️ Fracc. Palma Real, NAY</option>
-            <option>⚒️ Fracc. Parque Central, NAY</option>
-            <option>⚒️ Fracc. Primavera Residencial, NAY</option>
-            <option>⚒️ Fracc. Valle Dorado, NAY</option>
-            <option>⚒️ Fracc. Valle Esmeralda, NAY</option>
-            <option>⚒️ Fracc. Valle Marlin, NAY</option>
-            <option>⚒️ Fracc. Zafiro Residencial, NAY</option>
-            <option>⚒️ Villas Miramar, NAY</option>
-            <option>⚒️ San Vicente del Mar, NAY</option>
+
+            <optgroup label="📶 Colonias WiFi">
+              <option>⚒️ El Canton, JAL</option>
+              <option>⚒️ Fracc. Ex Haciendas San Angel, NAY</option>
+              <option>⚒️ Fracc. La Joya / Los Mangos, NAY</option>
+              <option>⚒️ Fracc. La Mision, NAY</option>
+              <option>⚒️ Fracc. Jardin De Las Arboledas, NAY</option>
+              <option>⚒️ Fracc. Los Anhelos, NAY</option>
+              <option>⚒️ Fracc. Palma Real, NAY</option>
+              <option>⚒️ Fracc. Parque Central, NAY</option>
+              <option>⚒️ Fracc. Primavera Residencial, NAY</option>
+              <option>⚒️ Fracc. Valle Dorado, NAY</option>
+              <option>⚒️ Fracc. Valle Esmeralda, NAY</option>
+              <option>⚒️ Fracc. Valle Marlin, NAY</option>
+              <option>⚒️ Fracc. Zafiro Residencial, NAY</option>
+            </optgroup>
+
+            <optgroup label="🚀 Colonias Fibra (Zonas especiales)">
+              <option>🚀 Villas Miramar, NAY</option>
+              <option>🚀 San Vicente del Mar, NAY</option>
+            </optgroup>
           </select>
+
           <div class="status" id="i_coloniaStatus" style="margin-top:6px">Sin colonia seleccionada</div>
-
-          <!-- FIBRA: aparece SOLO si colonia es Villas Miramar o San Vicente del Mar -->
-          <div class="fibraBox" id="fibraBox" aria-label="Planes de fibra (zona especial)">
-            <div class="row">
-              <div>
-                <strong>🚀 Zona especial con FIBRA ÓPTICA</strong>
-                <div class="status" id="fibraZoneText" style="margin-top:2px">—</div>
-              </div>
-              <span class="pill2">🔧 Instalación especial: $450 MXN</span>
-            </div>
-
-            <div class="plans2">
-              <div class="fibraPlan">
-                <div style="font-weight:1000">⚡ Fibra 50 Mb</div>
-                <div class="status">Servicio por fibra óptica</div>
-                <div class="price">$350 MXN</div>
-              </div>
-              <div class="fibraPlan">
-                <div style="font-weight:1000">🔥 Fibra 70 Mb</div>
-                <div class="status">Servicio por fibra óptica</div>
-                <div class="price">$450 MXN</div>
-              </div>
-            </div>
-
-            <div class="status" style="margin-top:10px;font-weight:900">
-              Tip: selecciona tu plan deseado abajo (inalámbrico o fibra).
-            </div>
-          </div>
         </div>
 
         <div class="col-6">
@@ -1168,18 +1023,9 @@
         <div class="col-6">
           <label for="i_plan">Plan deseado</label>
           <select id="i_plan" name="plan" required>
-            <option value="" disabled selected>Selecciona un plan</option>
-
-            <!-- Inalámbricos -->
-            <option value="Plan 300 — 15 Mbps (Inalámbrico)">Plan 300 — 15 Mbps (Inalámbrico)</option>
-            <option value="Plan 400 — 20 Mbps (Inalámbrico)">Plan 400 — 20 Mbps (Inalámbrico)</option>
-            <option value="Plan 600 — 25 Mbps (Inalámbrico)">Plan 600 — 25 Mbps (Inalámbrico)</option>
-
-            <!-- Fibra (solo se habilitan si colonia especial) -->
-            <option value="Fibra 350 — 50 Mbps (Fibra Óptica)" data-fibra-option>Fibra 350 — 50 Mbps (Fibra Óptica)</option>
-            <option value="Fibra 450 — 70 Mbps (Fibra Óptica)" data-fibra-option>Fibra 450 — 70 Mbps (Fibra Óptica)</option>
+            <!-- Se llena dinámicamente por JS según colonia (WiFi/Fibra) -->
           </select>
-          <div class="status" id="i_planHint" style="margin-top:6px">Selecciona un plan</div>
+          <div class="status" id="i_planHint" style="margin-top:6px">Selecciona tu plan</div>
         </div>
 
         <div class="col-6">
@@ -1339,6 +1185,12 @@
     // =====================
     const NUMERO_DESTINO = "5213222108817";
 
+    // Colonias por tipo
+    const COLONIAS_FIBRA = [
+      "🚀 Villas Miramar, NAY",
+      "🚀 San Vicente del Mar, NAY"
+    ];
+
     // Firma (debug / whoami)
     const WHOAMI = {
       name: "Jair Elizondo",
@@ -1452,6 +1304,7 @@
     }
 
     $("#menuBtn").addEventListener("click", () => {
+      // al volver al menú, limpiamos hash si venimos de whoami
       if (location.hash) history.replaceState(null, "", location.pathname + location.search);
       showView("home");
       toast("Opciones listas ✅");
@@ -1557,54 +1410,93 @@
     });
 
     // =====================
-    // INSTALACIÓN: colonia + fibra UI + geolocalización + envío
+    // INSTALACIÓN: colonia -> solo WiFi o solo Fibra
     // =====================
     const i_coloniaSelect = $("#i_coloniaSelect");
     const i_coloniaHidden = $("#i_colonia");
     const i_coloniaStatus = $("#i_coloniaStatus");
 
+    const i_tipoHidden = $("#i_tipo");
+    const tipoBadge = $("#tipoBadge");
+    const tipoStatus = $("#tipoStatus");
+    const wifiBox = $("#wifiBox");
     const fibraBox = $("#fibraBox");
-    const fibraZoneText = $("#fibraZoneText");
-    const planHint = $("#i_planHint");
+    const i_plan = $("#i_plan");
+    const i_planHint = $("#i_planHint");
 
-    const isSpecialFibra = (val) => {
-      const v = (val || "").toLowerCase();
-      return v.includes("villas miramar") || v.includes("san vicente del mar");
-    };
+    function setPlanOptions(tipo){
+      // limpia
+      i_plan.innerHTML = "";
 
-    function setFibraOptionsEnabled(enabled){
-      // habilita/deshabilita opciones de fibra dentro del select de plan
-      document.querySelectorAll("[data-fibra-option]").forEach((opt) => {
-        opt.disabled = !enabled;
-      });
+      const placeholder = document.createElement("option");
+      placeholder.value = "";
+      placeholder.disabled = true;
+      placeholder.selected = true;
+      placeholder.textContent = "Selecciona un plan";
+      i_plan.appendChild(placeholder);
 
-      // si NO está habilitado y el usuario tenía fibra seleccionada, lo regresamos al primer plan inalámbrico
-      const planSel = $("#i_plan");
-      const current = planSel.value || "";
-      if (!enabled && current.toLowerCase().includes("fibra")) {
-        planSel.value = "Plan 300 — 15 Mbps (Inalámbrico)";
+      if (tipo === "fibra"){
+        const o1 = document.createElement("option");
+        o1.value = "Fibra 50 Mb — $350 MXN";
+        o1.textContent = "Fibra 50 Mb — $350 MXN";
+        const o2 = document.createElement("option");
+        o2.value = "Fibra 70 Mb — $450 MXN";
+        o2.textContent = "Fibra 70 Mb — $450 MXN";
+        i_plan.appendChild(o1);
+        i_plan.appendChild(o2);
+
+        i_planHint.textContent = "Planes de fibra (solo zonas especiales)";
+      } else {
+        const o1 = document.createElement("option");
+        o1.value = "Plan 300 — 15 Mbps";
+        o1.textContent = "Plan 300 — 15 Mbps";
+        const o2 = document.createElement("option");
+        o2.value = "Plan 400 — 20 Mbps";
+        o2.textContent = "Plan 400 — 20 Mbps";
+        const o3 = document.createElement("option");
+        o3.value = "Plan 600 — 25 Mbps";
+        o3.textContent = "Plan 600 — 25 Mbps";
+        i_plan.appendChild(o1);
+        i_plan.appendChild(o2);
+        i_plan.appendChild(o3);
+
+        i_planHint.textContent = "Planes inalámbricos (WiFi)";
       }
+    }
 
-      planHint.textContent = enabled
-        ? "Zona especial detectada: también puedes elegir plan de fibra ✅"
-        : "Selecciona un plan (fibra solo en zonas especiales)";
+    function isFibraColonia(val){
+      return COLONIAS_FIBRA.includes((val || "").trim());
+    }
+
+    function applyTipoServicio(tipo){
+      const isFibra = tipo === "fibra";
+      i_tipoHidden.value = tipo;
+
+      tipoBadge.textContent = isFibra ? "🚀 FIBRA ÓPTICA" : "📶 WiFi";
+      tipoStatus.textContent = isFibra ? "Mostrando planes de fibra (zona especial)" : "Mostrando planes inalámbricos";
+
+      wifiBox.style.display = isFibra ? "none" : "grid";
+      fibraBox.style.display = isFibra ? "grid" : "none";
+
+      setPlanOptions(tipo);
     }
 
     function setInstalacionColonia(val) {
       i_coloniaHidden.value = val || "";
       i_coloniaStatus.textContent = val ? `Colonia: ${val}` : "Sin colonia seleccionada";
 
-      const special = isSpecialFibra(val);
-      fibraBox.style.display = special ? "block" : "none";
-      if (special) fibraZoneText.textContent = `📍 ${val}`;
-      setFibraOptionsEnabled(special);
+      // si es colonia fibra -> solo fibra, si no -> solo wifi
+      applyTipoServicio(isFibraColonia(val) ? "fibra" : "wifi");
     }
 
     i_coloniaSelect.addEventListener("change", () => setInstalacionColonia(i_coloniaSelect.value));
 
-    // por default fibra deshabilitada hasta que elija colonia especial
-    setFibraOptionsEnabled(false);
+    // Inicial: por defecto WiFi
+    applyTipoServicio("wifi");
 
+    // =====================
+    // INSTALACIÓN: geolocalización + envío
+    // =====================
     $("#i_geoBtn").addEventListener("click", () => {
       const s = $("#i_geoStatus");
 
@@ -1675,25 +1567,25 @@
       const colonia = (i_coloniaHidden.value || "").trim();
       const lat = $("#i_lat").value;
       const lng = $("#i_lng").value;
-
-      // si eligió plan fibra pero colonia no es especial, bloquea
-      if (plan.toLowerCase().includes("fibra") && !isSpecialFibra(colonia)) {
-        toast("Los planes de fibra solo aplican en Villas Miramar o San Vicente del Mar");
-        $("#i_coloniaSelect").focus();
-        return;
-      }
+      const tipo = (i_tipoHidden.value || "wifi").trim();
 
       let msg = "Hola 👋\nMe gustaría hablar sobre la contratación de servicio.\n\n";
       msg += "*Tipo de solicitud:* Instalación\n";
+      msg += `*Tipo de servicio:* ${tipo === "fibra" ? "FIBRA ÓPTICA" : "WiFi"}\n`;
       msg += `*Nombre:* ${nombre}\n`;
       msg += `*Dirección:* ${direccion}${colonia ? `, ${colonia}` : ""}\n`;
       msg += `*Plan deseado:* ${plan}\n`;
       msg += `*Teléfono:* ${tel}\n`;
       msg += `*Correo:* ${correo}\n`;
       msg += `*Método de contacto:* ${metodo}\n`;
-      if (plan.toLowerCase().includes("fibra")) {
-        msg += `*Nota:* Zona especial con FIBRA ÓPTICA · Instalación especial $450 MXN\n`;
+
+      // Nota costos según tipo
+      if (tipo === "fibra"){
+        msg += `*Instalación:* $450 MXN (especial)\n`;
+      } else {
+        msg += `*Instalación:* $999 MXN (pago único)\n`;
       }
+
       if (lat && lng) msg += `*Ubicación:* https://www.google.com/maps?q=${lat},${lng}\n`;
 
       abrirWhatsApp(msg);
@@ -1861,7 +1753,7 @@
     // Vista inicial
     // =====================
     (function initView(){
-      if (!sessionStorage.getItem("airconekta_last_view")) sessionStorage.setItem("airconekta_last_view", "home");
+      if (!sessionStorage.getItem(VIEW_KEY)) sessionStorage.setItem(VIEW_KEY, "home");
       handleHashRoute();
     })();
   </script>
