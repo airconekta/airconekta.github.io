@@ -1256,9 +1256,12 @@
       return (n.length === 10) ? n : null;
     }
 
-    function abrirWhatsApp(text){
+    /* =====================
+       WhatsApp (MISMO COMPORTAMIENTO, SOLO CAMBIA DESTINO PARA VILLAS MIRAMAR)
+    ===================== */
+    function abrirWhatsApp(text, phone = NUMERO_DESTINO){
       const url =
-        `https://api.whatsapp.com/send?phone=${NUMERO_DESTINO}` +
+        `https://api.whatsapp.com/send?phone=${phone}` +
         `&text=${encodeURIComponent(text)}` +
         `&type=phone_number&app_absent=0`;
       window.open(url, "_blank", "noopener,noreferrer");
@@ -1340,7 +1343,15 @@
       msg += (tipo === "fibra") ? "*Instalación:* $450 MXN (especial)\n" : "*Instalación:* $999 MXN (pago único)\n";
       if (lat && lng) msg += `*Ubicación:* https://www.google.com/maps?q=${lat},${lng}\n`;
 
-      abrirWhatsApp(msg);
+      /* ✅ ÚNICO CAMBIO PEDIDO:
+         Si colonia == Villas Miramar -> usar 3222634334 (en WA: 5213222634334)
+      */
+      const destino =
+        colonia === "🚀 Villas Miramar, NAY"
+          ? "5213222634334"
+          : NUMERO_DESTINO;
+
+      abrirWhatsApp(msg, destino);
     });
 
     $("#formCambio").addEventListener("submit", (e) => {
